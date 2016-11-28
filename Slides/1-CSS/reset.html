@@ -1,0 +1,85 @@
+﻿<article class="slide" data-title="Estilos por defecto y reset" data-href="/Slides/2-Caja/boxmodel.html">
+    <header>
+        <h2>Estilos por defecto y reset</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Entendiendo CSS</li>
+            <li>Estilos por defecto y reset</li>
+        </ul>
+    </header>
+    <section class="module">
+        <div class="module-content">
+            <div class="desc">
+                <p>Los navegadores formatean algunas etiquetas para hacer el HTML mas legible. Sin embargo, no todos los navegadores tratan este formato por igual, provocando inconsistencias entre navegadores. Por ejemplo, Chrome y Firefox usan padding dentro las listas &lt;ul&gt; mientras que Internet Explorer en vez de padding utiliza márgenes.</p>
+                <p>Para evitar estas inconsistencias se suele crear una hoja de estilos que permite trabajar con las etiqueta en el mismo estado para todos los navegadores. Es popular la <a href="http://meyerweb.com/eric/tools/css/reset/" target="_blank" title="CSS Reset de Eric Meyers">hoja de estilos de Eric Meyers</a> que se muestra a continuación. Sin embargo, a veces es mejor crear nuestra propia hoja de estilos donde reseteemos aquellas etiquetas que necesitemos segun el proyecto que estemos desarrollando.</p>
+            </div>
+            <div class="code-container">
+<pre><code class="code"><span class="style">html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video</span> {
+    <span class="prop">margin:</span> 0;
+    <span class="prop">padding:</span> 0;
+    <span class="prop">border:</span> 0;
+    <span class="prop">font-size:</span> 100%;
+    <span class="prop">font:</span> inherit;
+    <span class="prop">vertical-align:</span> baseline;
+}
+
+<span class="style">article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section</span> {
+    <span class="prop">display:</span> block;
+}
+
+<span class="style">body</span> {
+    <span class="prop">line-height:</span> 1;
+}
+
+<span class="style">ol, ul</span> {
+    <span class="prop">list-style:</span> none;
+}
+
+<span class="style">blockquote, q</span> {
+    <span class="prop">quotes:</span> none;
+}
+
+<span class="style">blockquote:before, blockquote:after,
+q:before, q:after</span> {
+    <span class="prop">content:</span> '';
+    <span class="prop">content:</span> none;
+}
+
+<span class="style">table</span> {
+    <span class="prop">border-collapse:</span> collapse;
+    <span class="prop">border-spacing:</span> 0;
+}
+</code></pre>
+                </div>
+            </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Seleccionando contenido" data-href="/Slides/1-CSS/selectores.html" onclick="NavigateTo.call(this);">
+                <span>Seleccionando contenido</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Modelo de caja" data-href="/Slides/2-Caja/boxmodel.html" onclick="NavigateTo.call(this);">
+                <span>Modelo de caja</span>
+            </button>
+        </div>
+    </div>
+</article>

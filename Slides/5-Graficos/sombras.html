@@ -1,0 +1,139 @@
+﻿<article class="slide" data-title="Sombras" data-href="/Slides/5-Graficos/transform.html">
+    <header>
+        <h2>Sombras</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Gráficos y animaciones</li>
+            <li>Sombras</li>
+        </ul>
+    </header>
+
+    <div class="desc">
+        <p>Cuando definimos la sombra de un elemento hay 4 valores en los que se descompone que debemos tener en cuenta:</p>
+        <ul>
+            <li>Desplazamiento horizontal.</li>
+            <li>Desplazamiento vertical.</li>
+            <li>Amplitud de la sombra.</li>
+            <li>Distancia desde la caja donde queremos que empiece a mostrarse la sombra.</li>
+        </ul>
+    </div>
+
+    <!-- box-shadow -->
+    <section class="module">
+        <h3>box-shadow</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.element</span> {
+    <span class="prop">box-shadow:</span> 0 0 10px black;
+}</code></pre>
+                </div>
+                <div class="output box-shadows">
+                    <div class="shadow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sombras internas -->
+    <section class="module">
+        <h3>sombra interna</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.element</span> {
+    <span class="prop">box-shadow:</span> inset 0 0 10px black;
+}</code></pre>
+                </div>
+                <div class="output box-shadows">
+                    <div class="shadow-inset"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estirando la sombra -->
+    <section class="module">
+        <h3>Expandiendo la sombra</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.element</span> {
+    <span class="prop">box-shadow:</span> 2px 2px 5px 5px black;
+}</code></pre>
+                </div>
+                <div class="output box-shadows">
+                    <div class="shadow-expand"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- sombras internas -->
+    <section class="module">
+        <h3>Combinando sombras</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.element</span> {
+    <span class="prop">box-shadow:</span> inset 0 0 10px black, 0 0 10px orange, 2px 2px 5px black;
+}</code></pre>
+                </div>
+                <div class="output box-shadows">
+                    <div class="shadow-multiple"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejemplos -->
+    <div class="module">
+        <h3>Ejemplos</h3>
+        <div class="module-content ">
+            <div class="desc" style="margin-bottom: 50px;">
+                <p>Mediante la aplicación de sombras a los elementos podemos crear efectos realistas solo mediante CSS. Por ejemplo, los botones o post-it que se muestran a continuación:</p>
+            </div>
+            <div class="examples clear">
+                <div class="shadow-sample-1">
+                    <button class="btn">
+                        <i></i>
+                    </button>
+                </div>
+                <div class="shadow-sample-2">
+                    <button class="btn"></button>
+                </div>
+                <div class="shadow-sample-3">
+                    <div>
+                        <h1>Nota 1</h1>
+                        <p>Texto de la nota 1</p>
+                    </div>
+                    <div>
+
+                        <h1>Nota 2</h1>
+                        <p>Texto de la nota 2</p>
+                    </div>
+                    <div>
+                        <h1>Nota 3</h1>
+                        <p>Texto de la nota 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Gradientes" data-href="/Slides/5-Graficos/gradientes.html" onclick="NavigateTo.call(this);">
+                <span>Gradientes</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Transformaciones" data-href="/Slides/5-Graficos/transform.html" onclick="NavigateTo.call(this);">
+                <span>Transformaciones</span>
+            </button>
+        </div>
+    </div>
+</article>

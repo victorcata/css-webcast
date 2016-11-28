@@ -1,0 +1,163 @@
+﻿<article id="width" class="slide" data-title="Calculando la anchura y altura" data-href="/Slides/3-Layout/position.html">
+    <header>
+        <h2>Anchura y altura</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Modelo de caja</li>
+            <li>Anchura y altura</li>
+        </ul>
+    </header>
+    <!-- width y height -->
+    <section class="module">
+        <h3>width y height</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Cuando asignamos la anchura y altura de un elemento debemos tener en cuenta lo siguiente:</p>
+                <ul>
+                    <li>Si asignamos un ancho y alto en pixeles, el contenido que no quepa en el contenedor saldra de él. Para gestionar este comportamiento trabajaremos con la propiedad overflow.</li>
+                    <li>Siempre que sea posible, debemos realizar un diseño fluido o responsive, en cuyo caso los anchos y altos serán establecidos mediante porcentajes.</li>
+                    <li>Si asignamos un porcentaje a la altura, este porcentaje será calculado en función de la anchura del contenedor padre si su altura no ha sido definida.</li>
+                    <li>La altura y anchura total de la caja es calculada en funcion de la suma del contenido, el padding, el margen y los bordes. Si queremos modificar este comportamiento utilizaremos la propiedad box-sizing.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span> {
+    <span class="prop">width:</span> 50%;
+    <span class="prop">height:</span> 100px;
+}
+</code></pre>
+                </div>
+                <div class="output is-widthheight width">
+                    <div class="box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- min y max -->
+    <section class="module">
+        <h3>Establecer límites al ancho y al alto</h3>
+        <div class="module-content">
+                <p>Podemos establecer un ancho mínimo y un ancho máximo:</p>
+                <ul>
+                    <li>max-width: Establece el ancho máximo que puede llegar a alcanzar una caja.</li>
+                    <li>min-width: Ancho mínimo que puede tener la caja.</li>
+                    <li>max-height: Establece la altura máxima a la que puede llegar la caja.</li>
+                    <li>min-height: Altura mínima a la que se establecerá la caja.</li>
+                </ul>
+        </div>
+    </section>
+
+    <!-- Calcular el tamaño -->
+    <section class="module">
+        <h3>Calcular el tamaño</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>El ancho y el alto total de la caja se calcula sumando su contenido, su padding, sus bordes y su margen.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span> {
+    <span class="prop">width:</span> 200px;
+    <span class="prop">height:</span> 100px;
+    <span class="prop">padding:</span> 10px 20px;                         
+    <span class="prop">margin:</span> 20px 30px;
+    <span class="prop">border:</span> 5px solid #AAA;
+}</code></pre>
+                </div>
+                <div class="output is-widthheight size">
+                    <div class="box">Ancho: 250px <br />Alto: 130px</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- box-sizing -->
+    <section class="module">
+        <h3>box-sizing</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante esta propiedad le estamos indicando como debe calcular el ancho y alto de la caja y que propiedades debe tener en cuenta para calcularlo:</p>
+                <ul>
+                    <li><strong>content-box:</strong> (Valor por defecto) El tamaño lo calcula segun el contenido. No tiene en cuenta el padding o el borde.</li>
+                    <li><strong>border-box:</strong> Calcula la altura y anchura incluyendo el contenido + borde + padding.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-content</span> {
+    <span class="prop">box-sizing:</span> content-box;
+}
+                    
+<span class="style">.box-border</span> {
+    <span class="prop">box-sizing:</span> border-box;
+}</code></pre>
+                </div>
+                <div class="output is-widthheight boxsizing">
+                    <div class="box-content">box-content</div>
+                    <div class="box-border">box-border</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- overflow -->
+    <section class="module">
+        <h3>overflow</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La propiedad overflow determina como debe actuar la caja cuando el contenido sobresale de ella. Normalmente tras aplicarle un tamaño de ancho y alto fijo.</p>
+                <ul>
+                    <li><strong>visible:</strong> por defecto, como si la propiedad no existiera</li>
+                    <li><strong>scroll:</strong> añade un scroll al elemento haga falta o no</li>
+                    <li><strong>auto:</strong> muestra el scroll cuando el contenido sobrepasa la anchura o altura</li>
+                    <li><strong>hidden:</strong> oculta el contenido que sale fuera del contenedor</li>
+                </ul>
+                <p>La propiedad overflow también se puede aplicar independiente para cada eje mediante las propiedades <strong>overflow-x</strong> y <strong>overflow-y</strong>.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-visible</span> {
+    <span class="prop">overflow:</span> visible;
+}
+
+<span class="style">.box-scroll</span> {
+    <span class="prop">overflow:</span> scroll;
+}
+
+<span class="style">.box-auto</span> {
+    <span class="prop">overflow:</span> auto;
+}
+
+<span class="style">.box-hidden</span> {
+    <span class="prop">overflow:</span> hidden;
+}
+</code></pre>
+                </div>
+                <div class="output is-widthheight overflow">
+                    <div class="box-visible">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </div>
+                    <div class="box-scroll">Lorem ipsum dolor sit amet</div>
+                    <div class="box-auto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </div>
+                    <div class="box-hidden">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Bordes" data-href="/Slides/2-Caja/border.html" onclick="NavigateTo.call(this);">
+                <span>Bordes</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Posicionamiento y visibilidad" data-href="/Slides/3-Layout/position.html" onclick="NavigateTo.call(this);">
+                <span>Posicionamiento y visibilidad</span>
+            </button>
+        </div>
+    </div>
+</article>

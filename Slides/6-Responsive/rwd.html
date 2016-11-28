@@ -1,0 +1,66 @@
+﻿<article class="slide" data-title="Responsive Web Design" data-href="/Slides/6-Responsive/mobile_first.html">
+    <header>
+        <h2>Responsive Web Design</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Diseño responsive</li>
+            <li>Media Queries</li>
+        </ul>
+    </header>
+
+    <div class="module">
+        <div class="desc">
+            <p>El diseño responsive consiste en adaptar el contenido al ancho del dispositivo para mejorar la experiencia del usuario. El diseño responsive combina layouts, imagenes y videos flexibles junto con el uso de media queries.</p>
+            <p>Hay que distinguir diseño responsive de diseño adaptive. Mientras que el diseño responsive adapta el layout de forma flexible a cualquier resolución, el diseño adaptive se centra en adaptar el layout al contexto en el que se encuentra el usuario, es decir, si está en un móvil, tablet o escritorio. En este caso, nos estamos centrando en ciertas resoluciones.</p>
+            <p>Cuando trabajamos con diseño responsive debemos evitar trabajar con unidades absolutas como pixeles, sustituyendolos por porcentajes en el layout y por unidades relativas em y rem en el texto.</p>
+            <p>Otra tema que debemos tener en cuenta cuando realizamos diseño responsive es adaptar el viewport del navegador mediante la siguiente etiqueta. De este modo evitamos con el dispositivo reescale el contenido de la página para mostrarla completa dentro del viewport.</p>
+        </div>
+        <div class="code-container is-light">
+            <pre><code class="code">&lt;<span class="tag">meta</span> <span class="prop">name</span>="viewport <span class="prop">content</span>="width=device-width"&gt;</code></pre><div class="code-output"></div>
+        </div>
+
+        <div class="submodule">
+            <h4>Imagenes responsive</h4>
+            <div class="submodule-content">
+                <p>Para trabajar con imagenes responsive debemos tener en cuenta dos situaciones:</p>
+                <ul>
+                    <li>La imagen debe irse adaptando fluidamente entre dos resoluciones, una mínima y otra máxima.</li>
+                    <li>Hay que trabajar con imagenes a distintas resoluciones e irlas cargando en función de la resolución del dispositivo. </li>
+                </ul>
+                <div class="code-container">
+<pre><code class="code"><span class="style">img, video, embed, object</span> {
+    <span class="prop">max-width:</span> 100%;
+}</code></pre>
+                </div>
+                <div class="submodule-content">
+                    <div class="desc">
+                        <p>Código HTML para carga de imagenes distintas según la resolución del dispositivo.</p>
+                    </div>
+                    <div class="code-container">
+<pre><code class="code">&lt;<span class="tag">picture</span>&gt;
+    &lt;<span class="tag">source</span> <span class="prop">srcset</span>="/images/img_large.jpg" <span class="prop">media</span>="(min-width: 1500px)" &gt;
+    &lt;<span class="tag">source</span> <span class="prop">srcset</span>="/images/img_medium.jpg" <span class="prop">media</span>="(min-width: 768px)" &gt;
+    &lt;<span class="tag">source</span> <span class="prop">srcset</span>="/images/img_small.jpg" <span class="prop">src</span>="/images/img.jpg" <span class="prop">alt</span>="Imagen" &gt;
+&lt;/<span class="tag">picture</span>&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Animaciones" data-href="/Slides/5-Graficos/animacion.html" onclick="NavigateTo.call(this);">
+                <span>Animaciones</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Mobile First vs Desktop First" data-href="/Slides/6-Responsive/mobile_first.html" onclick="NavigateTo.call(this);">
+                <span>Mobile First vs Desktop First</span>
+            </button>
+        </div>
+    </div>
+</article>

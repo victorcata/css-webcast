@@ -1,0 +1,267 @@
+﻿<article class="slide" data-title="Position" data-href="/Slides/3-Layout/float.html">
+    <header>
+        <h2>Position</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Layout</li>
+            <li>Posicionamiento y visibilidad</li>
+        </ul>
+    </header>
+
+    <!-- position -->
+    <section class="module">
+        <h3>position</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante esta propiedad podemos posicionar el elemento en un determinado lugar, ya sea con respecto al lugar que ocupa por defecto, con respecto al viewport o con respecto a un contenedor padre.</p>
+                <ul>
+                    <li><strong>static:</strong> (Valor por defecto) La propiedad static indica que el elemento debe ocupar la posición que le corresponde según el flujo normal del documento.</li>
+                    <li><strong>relative:</strong> El elemento se posiciona relativo a la posicion que esta ocupando por defecto. Este valor establece también una referencia para descendientes con posicionamiento absoluto.</li>
+                    <li><strong>absolute:</strong> El elemento deja de ocupar su posición por defecto y se posiciona con respecto al primer padre con posicionamiento relativo que encuentra o con respecto al &lt;body&gt; en caso de no encontrar ninguno.</li>
+                    <li><strong>fixed:</strong> El elemento deja de ocupar su posición por defecto y será posicionado con respecto al viewport. Manteniendose siempre fijo aunque se navegue a través del documento.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-relative</span> {
+    <span class="prop">position:</span> relative;
+    <span class="prop">top:</span> 20px;
+    <span class="prop">left:</span> 30px;
+}
+
+<span class="style">.box-absolute</span> {
+    <span class="prop">position:</span> absolute;
+    <span class="prop">bottom:</span> 10px;
+    <span class="prop">right:</span> 30px;
+}
+
+<span class="style">.box-fixed</span> {
+    <span class="prop">position:</span> fixed;
+    <span class="prop">top:</span> 50%;
+    <span class="prop">right:</span> 20px;
+}
+</code></pre>
+                </div>
+                <div class="output is-position">
+                    <div class="box-grandparent">
+                        <div class="box-parent">
+                            <div class="box-relative">relative</div>
+                            <div class="box-absolute">absolute</div>
+                            <div class="box-fixed">fixed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- left -->
+    <section class="module">
+        <h3>left</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-left</span> {
+    <span class="prop">position:</span> relative;
+    <span class="prop">left:</span> 10%;
+}</code></pre>
+                </div>
+                <div class="output is-position">
+                    <div class="box-parent">
+                        <div class="box-left"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- right -->
+    <section class="module">
+        <h3>right</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-right</span> {
+    <span class="prop">position:</span> relative;
+    <span class="prop">right:</span> 5%;
+}</code></pre>
+                </div>
+                <div class="output is-position">
+                    <div class="box-parent">
+                        <div class="box-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- top -->
+    <section class="module">
+        <h3>top</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-top</span> {
+    <span class="prop">position:</span> relative;
+    <span class="prop">top:</span> 30px;
+}</code></pre>
+                </div>
+                <div class="output is-position position">
+                    <div class="box-parent">
+                        <div class="box-top"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- bottom -->
+    <section class="module">
+        <h3>bottom</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-bottom</span> {
+    <span class="prop">position:</span> relative;
+    <span class="prop">bottom:</span> 30px;
+}</code></pre>
+                </div>
+                <div class="output is-position position">
+                    <div class="box-parent">
+                        <div class="box-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- z-index -->
+    <section class="module">
+        <h3>z-index</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante esta propiedad podemos establecer el orden que ocupan las capas una encima de las otras cuando se les aplica un posicionamiento distinto a static.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-index-1</span> {
+    <span class="prop">top:</span> 130px;
+    <span class="prop">left:</span> 80px;
+    <span class="prop">background-color:</span> #29A9DF;
+    <span class="prop">z-index:</span> 1;
+}
+
+<span class="style">.box-index-2</span> {
+    <span class="prop">top:</span> 160px;
+    <span class="prop">left:</span> 30px;
+    <span class="prop">background-color:</span> #F4792B;
+    <span class="prop">z-index:</span> 2;
+}
+
+<span class="style">.box-index-3</span> {
+    <span class="prop">top:</span> 200px;
+    <span class="prop">left:</span> 100px;
+    <span class="prop">background-color:</span> #0170BA;
+    <span class="prop">z-index:</span> 3;
+}
+
+<span class="style">.box-index-4</span> {
+    <span class="prop">top:</span> 150px;
+    <span class="prop">left:</span> 150px;
+    <span class="prop">background-color:</span> #AAA;
+    <span class="prop">z-index:</span> 4;
+}</code></pre>
+                </div>
+                <div class="output is-position index">
+                    <div class="box-index-1">1</div>
+                    <div class="box-index-2">2</div>
+                    <div class="box-index-3">3</div>
+                    <div class="box-index-4">4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- visibility -->
+    <section class="module">
+        <h3>visibility</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad muestra u oculta el elemento. A diferencia de la propiedad <em>display: none</em>, en este caso el espacio que ocupa la etiqueta es reservado.</p>
+                <ul>
+                    <li><strong>visible:</strong> (Valor por defecto) Es el valor normal para todos los elementos. Utizado para devolver a un elemento su visibilidad tras aplicarle una visibilidad hidden.</li>
+                    <li><strong>hidden:</strong> Oculta el elemento.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.hidden</span> {
+    <span class="prop">visibility:</span> hidden;
+}</code></pre>
+                </div>
+                <div class="output is-position visibility">
+                    <div></div>
+                    <div class="hidden"></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- opacity -->
+    <section class="module">
+        <h3>opacity</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad permite aplicar un nivel de transparencia al elemento y su contenido. Acepta valores decimales entre 0 y 1.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-opacity</span> {
+    <span class="prop">position:</span> relative;
+    <span class="prop">top:</span> 20px;
+    <span class="prop">left:</span> -50px;
+    <span class="prop">background-color:</span> #0170BA;
+    <span class="prop">opacity:</span> .5;
+}</code></pre>
+                </div>
+                <div class="output is-position opacity">
+                    <div></div>
+                    <div class="box-opacity"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="module">
+        <h3>Ejemplos</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>En este ejemplo se muestra el efecto realista que se puede aplicar mediante el posicionamiento de los elementos y el orden de sus capas.</p>
+            </div>
+            <div class="position-sample-1">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Anchura y altura" data-href="/Slides/2-Caja/width_height.html" onclick="NavigateTo.call(this);">
+                <span>Anchura y altura</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Float" data-href="/Slides/3-Layout/float.html" onclick="NavigateTo.call(this);">
+                <span>Float</span>
+            </button>
+        </div>
+    </div>
+</article>

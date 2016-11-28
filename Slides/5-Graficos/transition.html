@@ -1,0 +1,157 @@
+﻿<article class="slide" data-title="Transiciones" data-href="/Slides/5-Graficos/animacion.html">
+    <header>
+        <h2>Transiciones</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Gráficos y animaciones</li>
+            <li>Transiciones</li>
+        </ul>
+    </header>
+
+    <section class="module">
+        <div class="desc">
+            <p>Las transiciones son animaciones que se producen automaticamente entre un estado inicial y el estado final. A diferencia de las animaciones, no podemos crear o modificar fotogramas clave. </p>
+        </div>
+    </section>
+
+    <!-- transition-property y transition-duration -->
+    <section class="module">
+        <h3>transition-property y transition-duration</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Estas dos propiedades son las mínimas que debemos indicar para que se produzca una transición. La primera indica a que propiedades afecta y la segunda el tiempo que durará la transición. Las duraciones se pueden indicar en segundos (s) o milisegundos (ms).</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span>{
+    <span class="prop">left:</span> 0;
+    <span class="prop">width:</span> 100px;
+    <span class="prop">background-color:</span> #0170BA;
+    <span class="prop">transition-property:</span> left, background-color;
+    <span class="prop">transition-duration:</span> 2s, 1s;
+}
+                                             
+<span class="style">.container:hover .box</span>{
+    <span class="prop">left:</span> calc(100% - 100px);
+    <span class="prop">background-color:</span> #AAA;
+}</code></pre>
+                </div>
+                <div class="output transitions">
+                    <div class="container">
+                        <div class="box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- transition-timing -->
+    <section class="module">
+        <h3>transition-timing-function</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Indica la velocidad a la que se producirá la animación. Consta de una serie de valores predefinidos, sin embargo, a parte de los ya predefinidos se puede establecer una curva de Bezier: <em>cubic-bezier(...)</em></p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span>{
+    <span class="prop">left:</span> 0;
+    <span class="prop">width:</span> 100px;
+    <span class="prop">background-color:</span> #0170BA;
+    <span class="prop">transition-property:</span> left, background-color;
+    <span class="prop">transition-duration:</span> 2s, 1s;
+    <span class="prop">transition-timing-function:</span> ease-in-out;
+}
+                                             
+<span class="style">.container:hover .box</span>{
+    <span class="prop">left:</span> calc(100% - 100px);
+    <span class="prop">background-color:</span> #AAA;
+}</code></pre>
+                </div>
+                <div class="output transitions">
+                    <div class="container">
+                        <div class="box-timing"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- transition-delay -->
+    <section class="module">
+        <h3>transition-delay</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Indica un pequeño retraso hasta que comience la transición.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span>{
+    <span class="prop">left:</span> 0;
+    <span class="prop">width:</span> 100px;
+    <span class="prop">background-color:</span> #0170BA;
+    <span class="prop">transition-property:</span> left, background-color;
+    <span class="prop">transition-duration:</span> 2s, 1s;
+    <span class="prop">transition-delay:</span> 1s, .5s;
+}
+                                             
+<span class="style">.container:hover .box</span>{
+    <span class="prop">left:</span> calc(100% - 100px);
+    <span class="prop">background-color:</span> #AAA;
+}</code></pre>
+                </div>
+                <div class="output transitions">
+                    <div class="container">
+                        <div class="box-delay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shorthand -->
+    <section class="module">
+        <h3>Shorthand</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos indicar todas las propiedades afectas a la vez mediante esta propiedad.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span>{
+    <span class="prop">left:</span> 0;
+    <span class="prop">width:</span> 100px;
+    <span class="prop">background-color:</span> #0170BA;
+    <span class="prop">transition:</span> all 2s 300ms ease-in-out;
+}
+                                             
+<span class="style">.container:hover .box</span>{
+    <span class="prop">left:</span> calc(100% - 100px);
+    <span class="prop">background-color:</span> #AAA;
+}</code></pre>
+                </div>
+                <div class="output transitions">
+                    <div class="container">
+                        <div class="box-shorthand"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Transformaciones" data-href="/Slides/5-Graficos/transform.html" onclick="NavigateTo.call(this);">
+                <span>Transformaciones</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Animaciones" data-href="/Slides/5-Graficos/animacion.html" onclick="NavigateTo.call(this);">
+                <span>Animaciones</span>
+            </button>
+        </div>
+    </div>
+</article>

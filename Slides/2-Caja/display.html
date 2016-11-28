@@ -1,0 +1,70 @@
+﻿<section class="slide" data-title="Display" data-href="/Slides/2-Caja/border.html">
+    <header>
+        <h2>Display</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Modelo de caja</li>
+            <li>Display</li>
+        </ul>
+    </header>
+    <section class="module">
+        <div class="module-content">
+            <div class="desc">
+                <p>En HTML hay dos tipos de cajas, block o inline. Una etiqueta de tipo block crea un salto antes y despues de ella. Mientras que una etiqueta de tipo inline no produce estos saltos, apareciendo las etiquetas una al lado de la otra.</p>
+                <p>Las etiquetas de tipo inline tienen otra distinción; en ellas las propiedades de la caja se pueden aplicar al rango horizontal, pero no en vertical. Es decir, una etiqueta de tipo inline, por ejemplo &lt;span&gt; permitirá que le especifiquemos un margin-left o margin-right, pero las propiedades margin-top y margin-bottom serán descartadas. A estas etiquetas de tipo inline tampoco se les puede indicar una altura.</p>
+                <p>Esta distinción entre tipos de caja podemos sobreescribirla mediante la propiedad display cuyos valores puedes ser:</p>
+                <ul>
+                    <li><strong>block:</strong> Aplica el comportamiento de bloque, añadiendo saltos antes y despues.</li>
+                    <li><strong>inline:</strong> Evita los saltos antes y despues de la etiqueta.</li>
+                    <li><strong>inline-block:</strong> A veces queremos que una etiqueta siga siendo inline pero a la vez poder modificar sus propiedades verticales (margin-top, margin-bottom, height, padding-bottom y padding-top)</li>
+                    <li><strong>none:</strong> Oculta el elemento y ademas no ocupa su espacio dentro de la navegaciónd el DOM. A diferencia de la propiedad visibility.</li>
+                    <li><strong>table:</strong> Mediante este display se permite que el contenido del elemento se muestra como una &lt;table&gt;. Permitiendo establecer filas y columnas dentro del contenido.</li>
+                    <li><strong>flex:</strong> Permite establecer un contenedor flexible. Detallado en el apartado Layout: Caja flexible.</li>
+                </ul>
+                <p>La propiedad display tiene otro valores posibles, sin embargo estos son los utilizados comunmente.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">div</span> {
+    <span class="prop">border:</span> 2px solid blue;
+}
+           
+<span class="style">div.inline</span> {         
+    <span class="prop">display:</span> inline;
+    <span class="prop">background-color:</span> blue;
+    <span class="prop">color:</span> white;
+}
+
+<span class="style">span</span> {
+    <span class="prop">border:</span> 2px solid red;
+}             
+
+<span class="style">span.block</span> {
+    <span class="prop">display:</span> block;
+    <span class="prop">background-color:</span> blue;
+    <span class="prop">color:</span> white;
+}</code></pre>
+                </div>
+                <div class="output is-display">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <span>Aenean commodo ligula eget dolor</span>. Aenean massa. Cum sociis natoque penatibus <div>et magnis dis parturient montes, </div>nascetur ridiculus mus. Donec quam felis, ultricies nec, <span class="block">pellentesque eu, pretium quis, sem</span>. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, <div class="inline">rhoncus ut, imperdiet a, venenatis</div> vitae, justo. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Margin y padding" data-href="/Slides/2-Caja/margin_padding.html" onclick="NavigateTo.call(this);">
+                <span>Margin y padding</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Bordes" data-href="/Slides/2-Caja/border.html" onclick="NavigateTo.call(this);">
+                <span>Bordes</span>
+            </button>
+        </div>
+    </div>
+</section>

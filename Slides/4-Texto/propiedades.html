@@ -1,0 +1,329 @@
+﻿<article class="slide" data-title="Propiedades del texto" data-href="/Slides/4-Texto/listas.html">
+    <header>
+        <h2>Propiedades del texto</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Texto</li>
+            <li>Propiedades del texto</li>
+        </ul>
+    </header>
+
+    <!-- Color -->
+    <section class="module">
+        <h3>color</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code class="code"><span class="style">p.color</span> {
+    <span class="prop">color:</span> #0170BA;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="color">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tamaño de fuente -->
+    <section class="module">
+        <h3>font-size</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>A parte de las unidades conocidas, podemos establecer el tamaño de fuente mediante las siguientes palabras reservadas: <em>xx-small, x-small, smaller, small, medium, large, larger, x-large, xx-large</em>.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.font-container</span> {
+    <span class="prop">font-size:</span> 20px;
+}
+
+<span class="style">.xx-large</span> {
+    <span class="prop">font-size:</span> large;
+}
+
+<span class="style">.double</span> {
+    <span class="prop">font-size:</span> 200%;
+}
+
+<span class="style">.rem</span> {
+    <span class="prop">font-size:</span> 2rem;
+}
+
+<span class="style">.em</span> {
+    <span class="prop">font-size:</span> 2em;
+}</code></pre>
+                </div>
+                <div class="output is-font-props font-size">
+                    <div class="font-container">
+                        <p>Contenedor a 20px</p>
+                        <p class="xx-large">Tamaño de fuente xx-large</p>
+                        <p class="double">Tamaño de fuente al 200%</p>
+                        <p class="rem">Tamaño de fuente relativo al body a 2rem</p>
+                        <p class="em">Tamaño de fuente relativo al padre a 2em</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Italica -->
+    <section class="module">
+        <h3>font-style</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad nos permite poner una fuente en cursiva.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">p.style</span> {
+    <span class="prop">font-style:</span> italic;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="style">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Negrita -->
+    <section class="module">
+        <h3>font-weight</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Para indicar el grosor de la fuente se puede hacer mediante un valor entre 100 y 900 en rangos de 100 o mediante las palabras reservadas: <em>bold, bolder, lighter, normal</em>.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">p.weight</span> {
+    <span class="prop">font-weight:</span> bold;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="weight">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- text-transform -->
+    <section class="module">
+        <h3>text-transform</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Permite transformar el texto de la siguiente manera:</p>
+                <ul>
+                    <li><strong>uppercase</strong>: Pondrá todas las letras del texto en mayúsculas.</li>
+                    <li><strong>lowercase</strong>: Pondrá todas las letras del texto en minúsculas.</li>
+                    <li><strong>capitalize</strong>: Cada palabra empezará con la primera letra en mayúsculas.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">p.transform</span> {
+    <span class="prop">text-transform:</span> uppercase;
+}
+
+<span class="style">p.capitalize</span> {
+    <span class="prop">text-transform:</span> capitalize;
+}
+    </code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="transform">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                    <p class="capitalize">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- font-variant -->
+    <section class="module">
+        <h3>font-variant</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante esta propiedad podemos modificar las letras minúsculas para convertirlas a mayúsculas, sin embargo a un tamaño menor que las mayúsculas originales.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">p.caps</span> {
+    <span class="prop">font-variant:</span> small-caps;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="caps">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- text-decoration -->
+    <section class="module">
+        <h3>text-decoration</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.underline</span> {
+    <span class="prop">text-decoration:</span> underline;
+}
+
+<span class="style">.overline</span> {
+    <span class="prop">text-decoration:</span> overline;
+}
+
+<span class="style">.line-through</span> {
+    <span class="prop">text-decoration:</span> line-through;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="underline">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                    <p class="overline">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                    <p class="line-through">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- letter-spacing -->
+    <section class="module">
+        <h3>letter-spacing</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.space-letters</span> {
+    <span class="prop">letter-spacing:</span> 2px;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="space-letters">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- word-spacing -->
+    <section class="module">
+        <h3>letter-spacing</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.space-word</span> {
+    <span class="prop">word-spacing:</span> 2px;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="space-words">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- text-shadow -->
+    <section class="module">
+        <h3>text-shadow</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">p</span> {
+    <span class="prop">text-shadow:</span> 4px 4px 5px #333;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="shadow">Text shadow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- line-height -->
+    <section class="module">
+        <h3>line-height</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La propiedad line-height permite establecer por cada línea de texto su altura. La propiedad line-height se puede establecer mediante píxeles, porcentaje, ems o incluso no indicar una unidad. En este último caso, el valor será calculado a partir del valor que tiene actualmente el elemento. Esto es útil ya que la propiedad line-height es heredada, de este modo nos saltamos posibles herencias y solo trabajamos con la fuente actual.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.line</span> {
+    <span class="prop">line-height:</span> 2;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="line">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- text-indent -->
+    <section class="module">
+        <h3>text-indent</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.indent</span> {
+    <span class="prop">text-indent:</span> 2em;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="indent">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shortcut -->
+    <section class="module">
+        <h3>Shorthand</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante la propiedad font podemos establecer varias propiedades de la fuente de una sola vez. No es necesario indicar todas las propiedades, sin embargo, si es importante que aparezcan en el orden adecuado. Si se indican las propiedades <em>font-size</em> y <em>line-height</em>, estas deben ir separadas por el caracter /. El orden en el que se deben mostrar es: <em>font-style, font-variant, font-weight, font-size, line-height y font-family</em></p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.shorthand</span> {
+    <span class="prop">font:</span> italic  bold small-caps 18px/1.5 Arial, Helvetica, sans-serif;
+}</code></pre>
+                </div>
+                <div class="output is-font-props">
+                    <p class="shorthand">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="module">
+        <h3>Ejemplos</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante distintas propiedades y sobretodo mediante la propiedad <em>text-shadow</em> podemos llegar a crear efectos realistas en nuestras fuentes como los que se muestran a continuación:</p>
+            </div>
+            <div class="text-sample-1">
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="text-sample-2">
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="text-sample-3">
+                <p><span>L</span><span>o</span><span>r</span><span>e</span><span>m</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Web Fonts" data-href="/Slides/4-Texto/webfonts.html" onclick="NavigateTo.call(this);">
+                <span>Web Fonts</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Listas" data-href="/Slides/4-Texto/listas.html" onclick="NavigateTo.call(this);">
+                <span>Listas</span>
+            </button>
+        </div>
+    </div>
+</article>

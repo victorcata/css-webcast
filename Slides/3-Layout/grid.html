@@ -1,0 +1,305 @@
+﻿<article class="slide" data-title="Creando un grid" data-href="/Slides/4-Texto/webfonts.html">
+    <header>
+        <h2>Creando un Grid</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Layout</li>
+            <li>Creando un Grid</li>
+        </ul>
+    </header>
+
+    <div class="module">
+        <div class="desc">
+            <p>La estructura del layout debe componerse de:</p>
+            <ul>
+                <li><strong>Contenedor:</strong> El contenedor tiene todas las filas.</li>
+                <li><strong>Filas:</strong> Fila dentro del contenedor y que contiene las columnas.</li>
+                <li><strong>Columnas:</strong> Elemento dentro de la fila y que guarda el contenido.</li>
+            </ul>
+            <p>Los contenedores, filas y columnas solo son elementos de presentacion que nos ayudarán a ubicar nuestro contenido. Dicho contenido de un contenedor propio dentro de una columna, es decir, el contenido no debe ubicarse directamente dentro de la columna sin agruparlo dentro de un padre. Normalmente se trabaja con una reticula de 12 columnas ya que permite la combinacion de mayor numero de multiplos 1, 2, 3, 4 y 6 para distribuir nuestro contenido.</p>
+            <p>Una distribución HTML de los elementos podría resultar similar a la siguiente:</p>
+        </div>
+        <div class="code-container">
+<pre><code class="code"><span class="tag">&lt;div</span> <span class="prop">class</span>="container"&gt;
+    &lt;<span class="tag">div</span> <span class="prop">class</span>="row"&gt;
+        &lt;<span class="tag">div</span> <span class="prop">class</span>="column three"&gt;&lt;/<span class="tag">div</span>&gt;
+    &lt;/<span class="tag">div</span>&gt;             
+    &lt;<span class="tag">div</span> <span class="prop">class</span>="row"&gt;
+        &lt;<span class="tag">div</span> <span class="prop">class</span>="column six"&gt;&lt;/<span class="tag">div</span>&gt;
+        &lt;<span class="tag">div</span> <span class="prop">class</span>="column six"&gt;&lt;/<span class="tag">div</span>&gt;
+    &lt;/<span class="tag">div</span>&gt;
+&lt;/<span class="tag">div</span>&gt;</code></pre><div class="code-output"></div>
+        </div>
+    </div>
+
+    <div class="module">
+        <div class="desc">
+            <p>A continuación se muestran los estilos típicos cuando establecemos un grid y como se distribuyen los elementos dentro de dicho grid. Si queremos hacer el grid responsive solo tenemos que añadir las mismas propiedades dentro de las media queries correspondientes.</p>
+        </div>
+        <div class="code-container">
+            <div class="code">
+<pre><code><span class="style">.row:</span> {
+    <span class="prop">margin</span>: 0 -5px;
+}
+
+<span class="style">.row:after</span> {
+    <span class="prop">content</span>: '';
+    <span class="prop">display</span>: table;
+    <span class="prop">clear</span>: both;
+}
+
+<span class="style">[class^=col]</span> {
+    <span class="prop">float</span>: left;
+    <span class="prop">padding</span>: 5px;
+}
+
+<span class="style">.col-1</span> { <span class="prop">width</span>: 8.33%; }
+<span class="style">.col-2</span> { <span class="prop">width</span>: 16.66%; }
+<span class="style">.col-3</span> { <span class="prop">width</span>: 24.99%; }                     
+<span class="style">.col-4</span> { <span class="prop">width</span>: 33.33%; }
+<span class="style">.col-5</span> { <span class="prop">width</span>: 41.66%; }
+<span class="style">.col-6</span> { <span class="prop">width</span>: 50%; }                     
+<span class="style">.col-7</span> { <span class="prop">width</span>: 58.33%; }
+<span class="style">.col-8</span> { <span class="prop">width</span>: 66.66%; }
+<span class="style">.col-9</span> { <span class="prop">width</span>: 75%; }                     
+<span class="style">.col-10</span> { <span class="prop">width</span>: 83.33%; }
+<span class="style">.col-11</span> { <span class="prop">width</span>: 91.66%; }
+<span class="style">.col-12</span> { <span class="prop">width</span>: 100%; }
+
+<span class="style">.left-1</span> { <span class="prop">margin-left</span>: 8.33%; }
+<span class="style">.left-2</span> { <span class="prop">margin-left</span>: 16.66%; }
+<span class="style">.left-3</span> { <span class="prop">margin-left</span>: 24.99%; }                     
+<span class="style">.left-4</span> { <span class="prop">margin-left</span>: 33.33%; }
+<span class="style">.left-5</span> { <span class="prop">margin-left</span>: 41.66%; }
+<span class="style">.left-6</span> { <span class="prop">margin-left</span>: 50%; }                     
+<span class="style">.left-7</span> { <span class="prop">margin-left</span>: 58.33%; }
+<span class="style">.left-8</span> { <span class="prop">margin-left</span>: 66.66%; }
+<span class="style">.left-9</span> { <span class="prop">margin-left</span>: 75%; }                     
+<span class="style">.left-10</span> { <span class="prop">margin-left</span>: 83.33%; }
+<span class="style">.left-11</span> { <span class="prop">margin-left</span>: 91.66%; }
+<span class="style">.left-12</span> { <span class="prop">margin-left</span>: 100%; }
+
+<span class="tag">@media</span> (<span class="prop">min-width</span>: 768px) and (<span class="prop">max-width</span>: 1200px) {
+    <span class="style">.col-s-1</span> { <span class="prop">width</span>: 8.33%; }
+    <span class="style">.col-s-2</span> { <span class="prop">width</span>: 16.66%; }
+    <span class="style">.col-s-3</span> { <span class="prop">width</span>: 24.99%; } ...
+                                     
+    <span class="style">.left-s-1</span> { <span class="prop">margin-left</span>: 8.33%; }
+    <span class="style">.left-s-2</span> { <span class="prop">margin-left</span>: 16.66%; }
+    <span class="style">.left-s-3</span> { <span class="prop">margin-left</span>: 24.99%; } ...
+}
+
+<span class="tag">@media</span> (<span class="prop">min-width</span>: 1201px) and (<span class="prop">max-width</span>: 1500px) {                     
+    <span class="style">.col-m-1</span> { <span class="prop">width</span>: 8.33%; } ...                     
+
+    <span class="style">.left-m-1</span> { <span class="prop">margin-left</span>: 8.33%; } ...
+}</code></pre>
+            </div>
+            <div class="output is-grid">
+                <div class="grid">
+                    <div class="row">
+                        <div class="col-1">
+                            <div class="item">
+                                col-1
+                            </div>
+                        </div>
+                        <div class="col-11">
+                            <div class="item">
+                                col-11
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="item">
+                                col-2
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="item">
+                                col-10
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="item">
+                                col-3
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="item">
+                                col-9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="item">
+                                col-4
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="item">
+                                col-8
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="item">
+                                col-5
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="item">
+                                col-7
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="item">
+                                col-6
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="item">
+                                col-6
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="item">
+                                col-7
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="item">
+                                col-5
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="item">
+                                col-8
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="item">
+                                col-4
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="item">
+                                col-9
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="item">
+                                col-3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="item">
+                                col-10
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="item">
+                                col-2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-11">
+                            <div class="item">
+                                col-11
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="item">
+                                col-1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="item">
+                                col-12
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module">
+        <div class="module-content">
+            <div class="desc">
+                <p>Ejemplo de elementos dentro de un grid responsive.</p>
+            </div>
+            <div class="grid-demo">
+                <div class="row">
+                    <div class="col-s-2 col-m-3 col-4">
+                        <div class="item">col-s-2 col-m-3 col-4</div>
+                    </div>
+                    <div class="col-s-2 col-m-3 col-4 left-s-2">
+                        <div class="item">col-s-2 col-m-3 col-4 left-s-2</div>
+                    </div>
+                    <div class="col-s-2 col-m-3 col-4 left-s-2">
+                        <div class="item">col-s-2 col-m-3 col-4 left-s-2</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-s-6 col-8">
+                        <div class="item">col-s-6 col-8</div>
+                    </div>
+                    <div class="col-s-6 col-4">
+                        <div class="item">col-s-6 col-4</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2"><div class="item"><span>col-2</span></div></div>
+                    <div class="col-4"><div class="item">col-4</div></div>
+                    <div class="col-3"><div class="item">col-3</div></div>
+                    <div class="col-3"><div class="item">col-3</div></div>
+                </div>
+                <div class="row">
+                    <div class="col-s-4 col-m-3 col-2">
+                        <div class="item">col-s-4 col-m-3 col-2</div>
+                    </div>
+                    <div class="col-s-4 col-m-4 col-2 left-m-1">
+                        <div class="item">col-s-4 col-m-4 col-2 left-m-1</div>
+                    </div>
+                    <div class="col-s-4 col-m-3 col-2 left-m-1">
+                        <div class="item">col-s-4 col-m-3 col-2 left-m-1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Caja flexible" data-href="/Slides/3-Layout/flexbox.html" onclick="NavigateTo.call(this);">
+                <span>Caja flexible</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Web Fonts" data-href="/Slides/4-Texto/webfonts.html" onclick="NavigateTo.call(this);">
+                <span>Web Fonts</span>
+            </button>
+        </div>
+    </div>
+</article>

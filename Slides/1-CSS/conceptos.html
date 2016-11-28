@@ -1,0 +1,330 @@
+﻿<article class="slide" data-title="Prioridad de estilos" data-href="/Slides/1-CSS/selectores.html">
+    <header>
+        <h2>Conceptos básicos</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Entendiendo CSS</li>
+            <li>Conceptos básicos</li>
+        </ul>
+    </header>
+
+    <!-- Formato CSS  -->
+    <section class="module">
+        <h3>Formato de un estilo</h3>
+        <div class="module-content is-format">
+            <div class="code is-light">
+<pre><code><span class="style is-style">p</span> {
+    <span class="prop">color:</span> <span class="value">red;</span>
+    <span class="prop">font-size:</span> <span class="value is-value">1.5em;</span>
+}
+
+<span class="style">h1, h2, h3</span> {
+    <span class="prop is-prop">font-family:</span> <span class="value">Arial, sans-serif, monospace;</span>
+}</code></pre>
+            </div>
+            <div class="desc">
+                <p>Declarar un estilo consta de:</p>
+                <ul>
+                    <li>Selector del elemento.</li>
+                    <li>Nombre de la propiedad agrupadas por { }.</li>
+                    <li>Valor asignado a esa propiedad.</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Estilos en linea -->
+    <section class="module">
+        <h3>Estilos en línea</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>
+                    Los estilos en línea se declaran dentro del propio HTML mediante un atributo style. Los problemas que encontramos cuando asignamos directamente estilos en línea son:
+                </p>
+                <ul>
+                    <li>No estamos separando la capa de contenido (HTML) de la presentación (CSS).</li>
+                    <li>Los estilos en línea tiene la máxima prioridad frente a otros estilos asignados al mismo elemento, por lo que solo se pueden sobreescribir mediante la etiqueta !important</li>
+                </ul>
+                <p>Normalmente los estilos en línea son aplicados mediante JavaScript.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code>&lt;<span class="tag">p</span> <span class="prop">style=</span>"<span class="prop">color:</span> red; <span class="prop">font-size:</span> 20px"&gt;Estilo en línea de color rojo&lt;/<span class="tag">p</span>&gt;</code></pre>
+                </div>
+                <div class="output">
+                    <p style="color: red; font-size: 20px;">Estilo en línea de color rojo y fuente a 20px.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estilos en hoja interna -->
+    <section class="module">
+        <h3>Hoja de estilo interna</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Las hojas de estilo internas se declaran dentro del fichero HTML entre las etiquetas &lt;style&gt; y &lt;/style&gt;. A diferencia de los estilos en línea, estos se declaran en otra sección separada del elemento. Con las hojas de estilo internas hay que tener en cuenta lo siguiente:
+                </p>
+                <ul>
+                    <li>Son las segundas en prioridad despues los estilos en línea.</li>
+                    <li>Se pueden declaran en cualquier parte del fichero HTML dentro de la etiqueta &lt;style&gt; siempre que hayan sido declaradas antes de los atributos a los que afectan.</li>
+                    <li>Por conveniencia se suelen declarar dentro de la cabecera del documento &lt;head&gt;.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code>&lt;<span class="tag">style</span>&gt;
+    <span class="style">.container</span> {
+        <span class="prop">color</span>: red;
+        <span class="prop">font-size</span>: 1.5em;
+    }
+&lt;/<span class="tag">style</span>&gt;
+
+&lt;<span class="tag">div</span> <span class="prop">class</span>="container"&gt;&lt;/<span class="tag">div</span>&gt;
+</code></pre>
+                </div>
+                <div class="output">
+                    <style>
+                        .container {
+                            color: red;
+                            font-size: 1.5em;
+                        }
+                    </style>
+                    <div class="container">Estilos dentro del fichero HTML</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estilos en hoja externa -->
+    <section class="module">
+        <h3>Hoja de estilos externa</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Las hojas de estilo externas se declaran en un fichero independiente con extensión css. Dentro del fichero HTML se referencian mediante una etiqueta &lt;link&gt;. Las ventajas de trabajar con hojas externas son:</p>
+                <ul>
+                    <li>Separamos la capa de contenido (HTML) de la presentación (CSS).</li>
+                    <li>Permiten la reutilización de hojas de estilos en distintos documentos.</li>
+                    <li>Facilitan el posterior mantenimiento de la aplicación.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+<pre><code class="code is-light">&lt;<span class="tag">link</span> <span class="prop">href=</span>"<span class="value">css/styles.css</span>" <span class="prop">rel=</span>"<span class="value">stylesheet</span>"  /&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- !important -->
+    <section class="module">
+        <h3>!important</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La etiqueta !important se aplica directamente a la propiedad de un estilo. Utilizamos esta etiqueta cuando queremos que una propiedad sea aplicada con una mayor prioridad frente al mismo estilo aplicado desde otras partes del documento. Deberiamos evitar su uso en la medidad de lo posible ya que debemos tener en cuenta lo siguiente:</p>
+                <ul>
+                    <li>Al asignar la maxima prioridad, si en el futuro se quiere sobreescribir esa propiedad en otro estilo nos lo impedirá la etiqueta !important.</li>
+                    <li>Cuando varios estilos aplican a la misma prioridad la etiqueta !important, solo será aplicada la que se ha definido en último lugar, obligandonos a modificar la organización de nuestro fichero css.</li>
+                    <li>Nos estamos saltando la cadena de prioridades asignada por el documento, la cual, si la entendemos nos ayudará a mantener nuestros estilos organizados y sin necesidad del uso de esta etiqueta.</li>
+                </ul>
+                <p>Cuando la aplicación llega a tener miles de líneas de código CSS, el uso de esta etiqueta acarrea más problemas y dificulta un posterior mantenimiento, es por ello que se debe evitar su uso. Normalmente, solo es aplicable cuando queremos sobreescribir un estilo en línea aplicado directamente mediante JavaScript y cuando no es posible modificar dicho código en JavaScript.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">#red-box</span> {
+    <span class="prop">background-color:</span> #C0392B;
+}
+
+<span class="style">.blue</span> {
+    <span class="prop">background-color:</span> #0170BA !important;
+}</code></pre>
+                </div>
+                <div class="output is-conceptos">
+                    <div id="red-box">#red-box</div>
+                    <div class="blue">.blue</div>
+                    <div id="red-box" class="blue">#red-box + .blue</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prioridad por estilo -->
+    <section class="module">
+        <h3>Prioridades de estilo</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Cuando declaramos un estilo en CSS debemos tener en cuenta que prioridad le estamos asignado. Saber la prioridad nos ayuda a determinar que estilo se va a aplicar a un elemento cuando desde distintas clases se esta intentando modificar la misma propiedad. A continuación se muestra el orden de prioridades de mayor a menor prioridad:</p>
+                <ol class="list-high">
+                    <li>Propiedad aplicada con la etiqueta !important.</li>
+                    <li>Estilo en línea.</li>
+                    <li>Hoja de estilos interna.</li>
+                    <li>
+                        Hoja de estilos externa:
+                        <ol>
+                            <li>Estilos aplicados mediante identificador: #id</li>
+                            <li>Estilos aplicados mediante una clase: .clase</li>
+                            <li>Estilos aplicados mediante una etiqueta HTML: div</li>
+                            <li>La posición del estilo dentro del fichero css.</li>
+                        </ol>
+                    </li>
+                </ol>
+                <p>Cuando dos estilos son aplicados al mismo elemento dentro de una hoja de estilos externa, podemos utilizar la siguiente tabla para saber cual de los dos será aplicado finalmente:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selector</th>
+                            <th>Núm. Identificadores</th>
+                            <th>Núm. Clases</th>
+                            <th>Núm. Etiquetas</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>div</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>001</td>
+                        </tr>
+                        <tr>
+                            <td>div p</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>002</td>
+                        </tr>
+                        <tr>
+                            <td>div .content</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>011</td>
+                        </tr>
+                        <tr>
+                            <td>div p.content</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>012</td>
+                        </tr>
+                        <tr>
+                            <td>#container</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <p>
+                                    <strong>Nota:</strong> Cuando dos estilos tienen la misma prioridad gana aquel que se ha definido en último lugar.
+                                </p>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herencia -->
+    <section class="module">
+        <h3>Herencia</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La herencia en CSS se refiere a aquellas propiedades que declaradas a un elemento son heredades a sus descendientes. Por ejemplo, una propiedad font-size a 16px dentro de la etiqueta body será heredada por todos sus descendientes, siendo 16px el tamaño de fuente de todos los elementos dentro de la etiqueta body.</p>
+                <ul>
+                    <li>Por regla general, las propiedades relacionadas con el posicionamiento de los elementos (top, left, margin, padding, etc.) no son heredadas.</li>
+                    <li>Los navegadores tienen sus propios estilos heredados para formatear algunas etiquetas tales como headings (h1, h2, ...), links, listas (ol y ul), etc.</li>
+                    <li>Entre una propiedad heredada y la misma declarada en el estilo se aplicará la última.</li>
+                    <li>Cuando hay conflicto de propiedades heredadas entre distintos ancestros, ganará el ancestro más cercano al elemento.</li>
+                    <li>Normalmente, las propiedades heredadas son referentes a los estilos del texto.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.text</span> {
+    <span class="prop">font-size:</span> 20px;
+}
+
+<span class="style">.text p</span> {
+    <span class="prop">color:</span> #0170BA;
+    <span class="prop">font-style:</span> italic;
+}
+
+<span class="style">.text p strong</span>{
+    <span class="prop">font-weight:</span> bold;
+}
+</code></pre>
+                </div>
+                <div class="output is-conceptos text">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo</strong> ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, <strong>pellentesque</strong> eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, <strong>aliquet nec</strong>, vulputate eget, arcu. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unidades de medida -->
+    <section class="module">
+        <h3>Unidades de medida</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Las unidades de medida en CSS se clasifican en dos grupos: unidades absolutas y unidades relativas.</p>
+                <p><strong>Unidades absolutas:</strong> su valor no depende de otro valor de referencia.</p>
+                <ul>
+                    <li><strong>in</strong>: Pulgadas, una pulgada equivale a 2.54 centímetros.</li>
+                    <li><strong>cm</strong>: Centímetros.</li>
+                    <li><strong>mm</strong>: Milímetros.</li>
+                    <li><strong>pt</strong>: Puntos, un punto equivale a 1/72 pulgadas o 0.35 centímetros.</li>
+                    <li><strong>pc</strong>: Picas, una pica equivale a 12pt o 4.23 milímetros.</li>
+                    <li><strong>px</strong>: Los pixeles no es tanto una unidad absoluta, ya que depende de la resolución de la pantalla. Sin embargo, no depende del resto de elementos del documento.</li>
+                </ul>
+                <p><strong>Unidades relativas:</strong> su valor depende de otro valor referenciado previamente.</p>
+                <ul>
+                    <li><strong>em</strong>: Relativa al tamaño de letra definido por el ancestro más cercano.</li>
+                    <li><strong>rem</strong>: Relativa al tamaño de letra definido por el elemento raiz &lt;body&gt;.</li>
+                    <li><strong>ex</strong>: Relativa a la altura de la letra x del tamaño del elemento.</li>
+                    <li><strong>%</strong>: El porcentaje se aplica en función del tamaño (ancho o alto) del elemento contenedor.</li>
+                    <li><strong>vw</strong>: Unidad relativa al ancho del viewport. Por ejemplo, 1vw es un 1% del ancho del viewport y 100vw es el 100% del ancho del viewport.</li>
+                    <li><strong>vh</strong>: Unidad relativa al alto del viewport. Por ejemplo, 1vh es un 1% del alto del viewport y 100vh es el 100% del alto del viewport.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colores -->
+    <section class="module">
+        <h3>Colores</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>En CSS los colores se pueden declaran de la siguiente manera:</p>
+                <ul>
+                    <li><strong>Hexadecimal</strong>: El color se define mediante su valor en hexadecimal. Por ejemplo, #F4792B.</li>
+                    <li><strong>rgb</strong>: Se puede definir indicando cada uno de sus valores rojo, verde y azul en decimal. Por ejemplo: rgb(255, 128, 0)</li>
+                    <li><strong>rgba</strong>: Definición en decimal pero incluyendo un valor de transparencia entre 0 y 1. Por ejemplo, rgba(255, 128, 0, 0.5)</li>
+                    <li><strong>hsl</strong>: Indicando las propiedades de tono, saturación e iluminación. El valor de tono esta comprendido entre 0 y 360 mientras que los demas están comprendidos entre 0% y 100%. Por ejemplo, hsl(0, 100%, 50%)</li>
+                    <li><strong>hsla</strong>: Como hsl pero indicando además un valor de transparencia entre 0 y 1. Por ejemplo, hsla(0, 100%, 50%, 0.2)</li>
+                    <li><strong>Mediante palabras clave</strong>: Hay una serie de colores predefinidos por los navegadores que podemos usar directamente, por ejemplo: blue, red, black, white, aquamarine, bisque, etc. Sin embargo, tener cuidado cuando utilizamos colores no primarios o secundarios ya que cada navegador puede interpretarlo de distinta manera.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Seleccionando contenido" data-href="/" onclick="NavigateHome.call(this);">
+                <span>Inicio</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Seleccionando contenido" data-href="/Slides/1-CSS/selectores.html" onclick="NavigateTo.call(this);">
+                <span>Seleccionando contenido</span>
+            </button>
+        </div>
+    </div>
+</article>

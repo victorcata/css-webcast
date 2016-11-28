@@ -1,0 +1,125 @@
+﻿<article class="slide" data-title="Gradientes" data-href="/Slides/5-Graficos/sombras.html">
+    <header>
+        <h2>Gradientes</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Gráficos y animaciones</li>
+            <li>Gradientes</li>
+        </ul>
+    </header>
+
+    <!-- Linear -->
+    <section class="module">
+        <h3>Gradiente lineal</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.gradient-1</span> {
+    <span class="prop">background-image:</span> linear-gradient(to right, #0170BA, white);
+}
+
+<span class="style">.gradient-2</span> {
+    <span class="prop">background-image:</span> linear-gradient(135deg, white, #0170BA);
+}
+
+<span class="style">.gradient-3</span> {
+    <span class="prop">background-image:</span> linear-gradient(to right, white, #0170BA 30%, #0170BA 70%, white);
+}
+
+<span class="style">.gradient-4</span> {
+    <span class="prop">background-image:</span> linear-gradient(to right, black, transparent), 
+                                       linear-gradient(100deg, magenta, transparent), 
+                                       linear-gradient(40deg, yellow, transparent);
+}</code></pre>
+                </div>
+                <div class="output gradient">
+                    <div class="gradient-1"></div>
+                    <div class="gradient-2"></div>
+                    <div class="gradient-3"></div>
+                    <div class="gradient-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linear repetido -->
+    <section class="module">
+        <h3>repeating-linear-gradient</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background-image:</span> repeating-linear-gradient(45deg, #0170BA 20px, #29A9DF 30px, #0170BA 40px);
+}</code></pre>
+                </div>
+                <div class="output gradient">
+                    <div class="repeat-linear"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radial -->
+    <section class="module">
+        <h3>Gradiente radial</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>El origen del centro del gradiente se puede también especificar mediante los siguientes valores:</p>
+                <ul>
+                    <li><strong>closest-side:</strong> Extiende el gradiente hasta el lado mas cercano.</li>
+                    <li><strong>closest-corner:</strong> Lo extiende hasta la esquina mas cercana.</li>
+                    <li><strong>farthest-side:</strong> Hasta el lado mas alejado.</li>
+                    <li><strong>farthest-corner:</strong> Hasta la esquina más alejada.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.gradient-radial-1</span> {
+    <span class="prop">background-image:</span> radial-gradient(circle, red, blue);
+}
+    
+<span class="style">.gradient-radial-2</span> {
+    <span class="prop">background-image:</span> radial-gradient(circle at 20%, red, blue);
+}</code></pre>
+                </div>
+                <div class="output gradient">
+                    <div class="gradient-radial-1"></div>
+                    <div class="gradient-radial-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radial repetido -->
+    <section class="module">
+        <h3>repeating-radial-gradient</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background-image:</span> repeating-radial-gradient(circle, #0170BA 20px, #FFF 40px, #0170BA 50px);
+}</code></pre>
+                </div>
+                <div class="output gradient">
+                    <div class="repeat-gradient"></div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Background" data-href="/Slides/5-Graficos/background.html" onclick="NavigateTo.call(this);">
+                <span>Background</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Sombras" data-href="/Slides/5-Graficos/sombras.html" onclick="NavigateTo.call(this);">
+                <span>Sombras</span>
+            </button>
+        </div>
+    </div>
+</article>

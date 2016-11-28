@@ -1,0 +1,147 @@
+﻿<article class="slide" data-title="SASS">
+    <header>
+        <h2>Introducción a SASS</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>SASS</li>
+            <li>Introducción a SASS</li>
+        </ul>
+    </header>
+    
+    <div class="submodule">
+        <p>SASS es un precomilador de CSS que nos permite escribir código CSS de una manera más sencilla. Para ello, este precompilador nos permite añadir funcionalidades de las que CSS no consta, como creación de variables, anidamientos, herencia o mixins. SASS incluye muchas otras funcionalidades, como crear funciones o bucles, sin embargo estas primeras son las más comunmente utilizadas.</p>
+    </div>
+
+    <!-- Variables -->
+    <div class="module">
+        <h3>Variables</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante CSS no podemos crear variables, lo cual puede resultar costoso cuando hay que aplicar el mismo cambio a distintos estilos a lo largo de las hojas de estilos. Por ejemplo, porque hemos modificado los colores de nuestra página web.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code>
+<span class="sass">$font_medium</span>: 18px;
+<span class="sass">$blue_dark</span>: #0170BA;            
+
+<span class="style">.variables</span> {
+    <span class="prop">font-size:</span> <span class="sass">$font_medium;</span>
+    <span class="prop">color:</span> <span class="sass">$blue_dark;</span>
+}</code></pre>
+                </div>
+                <div class="output sass">
+                    <p class="variables">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anidamiento -->
+    <div class="module">
+        <h3>Anidamiento</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>En CSS no se permite el anidamiento, es decir, si queremos aplicar un estilo a partir de los padres del elemento, debemos escribir todos los elementos de ese anidamiento. Mediante SASS, podemos establecer una jerarquia de estilos que aplicarán al elementos y sus descendientes. Aunque está funcionalidad facilita mucho el trabajo, debemos ser conscientes de que tiende a un abuso de selectores de etiquetas cuando generemos los estilos, estás etiquetas provocarán una mayor especificidad del estilo, siendo en ocasion bastante dificil de sobreescribir según el nivel de anidamiento.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.container</span> {
+    <span class="style">.content</span> {
+        <span class="style">.element</span> {
+            <span class="prop">width:</span> 100px;
+            <span class="prop">height:</span> 100px;
+            <span class="prop">background-color:</span> <span class="sass">$blue_dark;</span>
+        }
+    }
+}</code></pre>
+                </div>
+                <div class="output sass">
+                    <div class="container">
+                        <div class="content">
+                            <div class="element"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Herencia -->
+    <div class="module">
+        <h3>Herencia</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante la herencia podemos aplicar a un estilo todas las propiedades de otro estilo anterior, sin tener que repetir todas y cada una de ellas para el nuevo estilo.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-1</span> {
+    <span class="prop">width:</span> 100px;
+    <span class="prop">height:</span> 100px;
+    <span class="prop">margin:</span> 10px;
+    <span class="prop">background-color:</span> <span class="sass">$blue_dark;</span>
+}
+<span class="style">.box-2</span> {
+    <span class="tag">@extend</span> <span class="style">.box-1</span>;
+    <span class="prop">box-shadow:</span> <span class="sass">3px 3px 5px #000;</span>
+}
+<span class="style">.box-3</span> {
+    <span class="tag">@extend</span> <span class="style">.box-2</span>;
+    <span class="prop">margin-left:</span> <span class="sass">50px;</span>
+}</code></pre>
+                </div>
+                <div class="output sass">
+                    <div class="box-1"></div>
+                    <div class="box-2"></div>
+                    <div class="box-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mixins -->
+    <div class="module">
+        <h3>Mixins</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Los mixins son pequeños atajos que nos permiten definir una vez un conjunto de propiedades que se repiten muchas veces mediante una única llamada.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="tag">@mixin cross-transform(</span> <span class="sass">$value</span><span class="tag">)</span> {
+    <span class="prop">_webkit-transform:</span> <span class="sass">$value</span>;
+    <span class="prop">_ms-transform:</span> <span class="sass">$value</span>;
+    <span class="prop">_moz-transform:</span> <span class="sass">$value</span>;
+    <span class="prop">_o-transform:</span> <span class="sass">$value</span>;
+    <span class="prop">transform:</span> <span class="sass">$value</span>;
+}                     
+
+<span class="style">.transform</span> {
+    <span class="tag">@extend</span> <span class="style">.box-1</span>;
+    <span class="tag">@include</span> <span class="tag">transform(</span>rotate(45deg)<span class="tag">)</span>
+}</code></pre>
+                </div>
+                <div class="output sass">
+                    <div class="transform"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Media Queries" data-href="/Slides/6-Responsive/media_queries.html" onclick="NavigateTo.call(this);">
+                <span>Media Queries</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Bibliografía" data-href="/Slides/Bibliografia/biblio.html" onclick="NavigateTo.call(this);">
+                <span>Bibliografía</span>
+            </button>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,139 @@
+﻿<section id="border" class="slide" data-title="Bordes" data-href="/Slides/2-Caja/width_height.html">
+    <header>
+        <h2>Bordes</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Modelo de caja</li>
+            <li>Bordes</li>
+        </ul>
+    </header>
+    <!-- Tipos de bordes -->
+    <section class="module border-styles">
+        <div>solid</div>
+        <div>dotted</div>
+        <div>dashed</div>
+        <div>double</div>
+        <div>groove</div>
+        <div>inset</div>
+        <div>outset</div>
+        <div>ridge</div>
+    </section>
+
+    <!-- Bordes independientes -->
+    <section class="module">
+        <h3>border-top, border-right, border-bottom y border-left</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Estas propiedades permiten establecer los bordes de cada lado de forma independiente.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span> {
+    <span class="prop">border-top:</span> 5px dotted blue;
+    <span class="prop">border-right:</span> 3px dashed green;
+    <span class="prop">border-bottom:</span> 5px solid gray;
+    <span class="prop">border-left:</span> 6px solid red;
+}
+</code></pre>
+                </div>
+                <div class="output is-bordes border">
+                    <div class="box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propiedades -->
+    <section class="module">
+        <h3>border-width, border-style y border-color</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span> {
+    <span class="prop">border-width:</span> 3px;
+    <span class="prop">border-style:</span> solid;
+    <span class="prop">border-color:</span> #F4792B;
+}
+</code></pre>
+                </div>
+                <div class="output is-bordes props">
+                    <div class="box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- border-radius -->
+    <section class="module">
+        <h3>border-radius</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-1</span> {
+    <span class="prop">border-radius:</span> 5px;
+}
+
+<span class="style">.box-2</span> {
+    <span class="prop">border-radius:</span> 50%;
+}
+
+<span class="style">.box-3</span>{
+    <span class="prop">border-radius:</span> 10px/20px;
+}
+
+<span class="style">.box-4</span> {
+    <span class="prop">border-top-left-radius:</span> 20px;
+    <span class="prop">border-bottom-right-radius:</span> 20px;
+}
+</code></pre>
+                </div>
+                <div class="output is-bordes radius">
+                    <div class="box-1">.box-1</div>
+                    <div class="box-2">.box-2</div>
+                    <div class="box-3">.box-3</div>
+                    <div class="box-4">.box-4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shorthand -->
+    <section class="module">
+        <h3>Atajos para los bordes</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos establecer con una propiedad un valor independiente para cada lado.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box</span> {
+    <span class="prop">border-width:</span> 5px 2px 5px 4px;
+    <span class="prop">border-style:</span> dotted solid dashed ridge;
+    <span class="prop">border-color:</span> red green blue black;
+    <span class="prop">border-radius:</span> 5px 10px 2px 20px;
+}
+</code></pre>
+                </div>
+                <div class="output is-bordes shorthands">
+                    <div class="box"></div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Display" data-href="/Slides/2-Caja/display.html" onclick="NavigateTo.call(this);">
+                <span>Display</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Anchura y altura" data-href="/Slides/2-Caja/width_height.html" onclick="NavigateTo.call(this);">
+                <span>Anchura y altura</span>
+            </button>
+        </div>
+    </div>
+</section>

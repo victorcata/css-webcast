@@ -1,0 +1,135 @@
+﻿<article class="slide" data-title="Media Queries" data-href="/Slides/7-SASS/sass.html">
+    <header>
+        <h2>Media Queries</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Diseño responsive</li>
+            <li>Introducción a RWD</li>
+        </ul>
+    </header>
+
+    <div class="module">
+        <div class="module-content">
+            <div class="desc">
+                <p>Las media queries nos permiten aplicar unos estilos en función del medio en el que estamos, normalmente la resolución del dispositivo. Los cambios más habituales que solemos aplicar con media queries son:</p>
+                <ul>
+                    <li>Ajustar el tamaño de las columnas del layout.</li>
+                    <li>Flexibilidad de los anchos de los elementos.</li>
+                    <li>Adaptar los espacios entre elementos. Por ejemplo: espacio entre cabeceras, etc.</li>
+                    <li>Adaptar el tamaño de la fuente.</li>
+                    <li>Cambiar los menus de navegación.</li>
+                    <li>Esconder contenido para resoluciones móviles.</li>
+                    <li>Modificar las imágenes.</li>
+                </ul>
+                <p>Las media queries se pueden aplicar a los siguientes medios:</p>
+                <ul>
+                    <li><strong>all</strong>: Se aplicaría a todos los medios.</li>
+                    <li><strong>print</strong>: Se aplicaría solo cuando se imprime la página.</li>
+                    <li><strong>screen</strong>: Para todas las pantallas de ordenador, tablet, móvil, etc.</li>
+                    <li><strong>speech</strong>: Utilizada para screenreaders.</li>
+                </ul>
+                <p>Tenemos más medios disponibles sin embargo son los menos utilizados, como: <strong>braille, embossed, handheld, projection, tty y tv.</strong></p>
+                <br />
+                <p>Además podemos aplicar la media query según unas características determinadas:</p>
+                <ul>
+                    <li><strong>width, min-width y max-width</strong>: Indica el ancho del documento que se está visualizando.</li>
+                    <li><strong>height, min-height y max-height</strong>: Indica el alto del documento.</li>
+                    <li><strong>resolution</strong>: Indica la resolución del dispositivo, medida en dpi o dpcm.</li>
+                    <li><strong>orientation</strong>: Según la orientación del dispositivo, pudiendo ser landscape o portrait.</li>
+                    <li><strong>aspect-ratio</strong>: Indica la relación de aspecto del dispositivo, por ejemplo 16/9.</li>
+                </ul>
+                <p>También hay otras propiedades menos utilizadas como: <strong>color, color-index, device-aspect-ratio, device-width, device-height, grid, monochrome o scan.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="module">
+        <h3>Como incluir media queries</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos incluir las media queries en nuestro proyecto de diferentes modos, mediante un llamada a un fichero independiente, incluyendolas junto a las hojas de estilos o referenciandolas desde una hoja de estilos independiente.</p>
+            </div>
+
+            <!-- link -->
+            <section class="submodule">
+                <h4>Links</h4>
+                <div class="submodule-content">
+                    <div class="desc">
+                        <p>La ventaja de este método es que solo se cargarán los estilos necesarios para la resolución en la que nos encontramos. El problema es que implica una llamada extra al servidor.</p>
+                    </div>
+                    <div class="code-container">
+<pre><code class="code">&lt;<span class="tag">link</span> <span class="prop">href</span>="css/small.css" <span class="prop">rel</span>="stylesheet" <span class="prop">media</span>="(width: 480px)"&gt;
+</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- @import -->
+            <section class="submodule">
+                <h4>@import</h4>
+                <div class="submodule-content">
+                    <div class="desc">
+                        <p>Mediante esta etiqueta estamos importando nuestras media queries de un fichero externo a la hoja de estilos desde la que se llama. La ventaja de este método es que tenemos una hoja de estilos independiente donde almacenar nuestras media queries.</p>
+                    </div>
+                    <div class="code-container">
+<pre><code class="code"><span class="tag">@import</span> url(css/small.css) (max-width: 320px);
+
+<span class="tag">@import</span> url(css/small.css) (max-width: 320px) and (max-width: 768px);
+</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- @media -->
+            <section class="submodule">
+                <h4>@media</h4>
+                <div class="submodule-content">
+                    <p>Mediante la etiqueta @media estamos generando un bloque donde indicaremos los estilos que queremos aplicar segun el parametro de la media query que indiquemos. Independientemente de que guardemos nuestras media queries en un fichero independiente o no, siempre debemos declararlas dentro de la etiqueta @media.</p>
+                    <div class="module-content">
+                        <div class="code-container">
+<pre><code class="code"><span class="tag">@media</span> (<span class="tag">min-width</span>: 768px) and (<span class="tag">max-width</span>: 1024px) {
+    <span class="style">.media</span> {
+        <span class="prop">width:</span> 50%;
+        <span class="prop">background:</span> #333;
+    }
+}
+
+<span class="tag">@media</span> (<span class="tag">min-width</span>: 1200px) {
+    <span class="style">.media</span> {                                 
+        <span class="prop">width:</span> 75%;
+        <span class="prop">background:</span> #29A9DF;
+    }
+}
+
+<span class="tag">@media</span> (<span class="tag">min-width</span>: 1500px) {
+    <span class="style">.media</span> {
+        <span class="prop">width:</span> 100%;
+        <span class="prop">background:</span> #0170BA;
+    }
+}</code></pre>
+                            <div class="code-output mediaquery">
+                                <div class="media"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Mobile First vs Desktop First" data-href="/Slides/6-Responsive/mobile_first.html" onclick="NavigateTo.call(this);">
+                <span>Mobile First vs Desktop First</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Introducción a SASS" data-href="/Slides/7-SASS/sass.html" onclick="NavigateTo.call(this);">
+                <span>Introducción a SASS</span>
+            </button>
+        </div>
+    </div>
+</article>

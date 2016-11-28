@@ -1,0 +1,203 @@
+﻿<article class="slide" data-title="Transformaciones" data-href="/Slides/5-Graficos/transition.html">
+    <header>
+        <h2>Transformaciones</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Gráficos y animaciones</li>
+            <li>Transformaciones</li>
+        </ul>
+    </header>
+
+    <section class="module">
+        <div class="desc">
+            <p>Las transformaciones nos permiten manipular un elemento tanto en 2D como en 3D. Las principales transformaciones que podemos realizar son: rotación, escalado, traslación y sesgado. Para las propiedades de rotación y sesgado el valor debe ser asignado en grados (deg).</p>
+        </div>
+    </section>
+
+    <!-- Rotate -->
+    <section class="module">
+        <h3>rotate</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.rotate</span> {
+    <span class="prop">transform:</span> rotate(90deg);
+}
+
+<span class="style">.rotate-x</span> {
+    <span class="prop">transform:</span> rotateX(60deg);
+}
+
+<span class="style">.rotate-y</span> {
+    <span class="prop">transform:</span> rotateY(120deg);
+}
+
+<span class="style">.rotate-z</span> {
+    <span class="prop">transform:</span> rotateZ(45deg);
+}</code></pre>
+                </div>
+                <div class="output transforms">
+                    <div class="rotate"></div>
+                    <div class="rotate-x"></div>
+                    <div class="rotate-y"></div>
+                    <div class="rotate-z"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scale -->
+    <section class="module">
+        <h3>scale</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.item</span> {
+    <span class="prop">transform:</span> scale(2);
+}
+
+<span class="style">.item</span> {
+    <span class="prop">transform:</span> scale(1.5);
+}
+
+<span class="style">.item</span> {
+    <span class="prop">transform:</span> scale(1.75, .5);
+}
+
+<span class="style">.item</span> {
+    <span class="prop">transform:</span> scaleX(1.5);
+}
+
+<span class="style">.item</span> {
+    <span class="prop">transform:</span> scaleY(1.75);
+}</code></pre>
+                </div>
+                <div class="output transforms">
+                    <div class="scale"></div>
+                    <div class="scale-2"></div>
+                    <div class="scale-x"></div>
+                    <div class="scale-y"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Translate -->
+    <section class="module">
+        <h3>translate</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.item</span> {
+    <span class="prop">transform:</span> translate(20px, 10px);
+}
+
+<span class="style">.item</span> {
+    <span class="prop">transform:</span> translateX(20px);
+}                 
+
+<span class="style">.item</span> {
+    <span class="prop">transform:</span> translateY(10px);
+}</code></pre>
+                </div>
+                <div class="output transforms">
+                    <div class="translate"></div>
+                    <div class="translate-x"></div>
+                    <div class="translate-y"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skew -->
+    <section class="module">
+        <h3>skew</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.skew</span> {
+    <span class="prop">transform:</span> skew(-30deg, 0);
+}
+
+<span class="style">.skew-x</span> {
+    <span class="prop">transform:</span> skewX(60deg);
+}
+
+<span class="style">.skew-y</span> {
+    <span class="prop">transform:</span>  skewY(45deg);
+}</code></pre>
+                </div>
+                <div class="output transforms">
+                    <div class="skew"></div>
+                    <div class="skew-x"></div>
+                    <div class="skew-y"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- transform-origin -->
+    <section class="module">
+        <h3>transform-origin</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad indica desde que punto se debe tomar como centro de gravedad para realizar la transformación.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.item</span> {
+    <span class="prop">transform-origin:</span> left top;
+    <span class="prop">transform:</span> rotateZ(-15deg);
+}</code></pre>
+                </div>
+                <div class="output transforms">
+                    <div class="origin"></div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Ejemplos -->
+    <div class="module">
+        <h3>Ejemplos</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante CSS podemos manipular elementos en el espacio tridimensional y mediante una animación como la siguiente darles movimiento. En el siguiente ejemplo se muestran dos cubos uno dentro del otro mientras una animación los rota en los ejes X e Y.</p>
+            </div>
+            <div class="transform-sample-1">
+                <div class="cube">
+                    <div class="external-1">1</div>
+                    <div class="external-2">2</div>
+                    <div class="external-3">3</div>
+                    <div class="external-4">4</div>
+                    <div class="external-5">5</div>
+                    <div class="external-6">6</div>
+
+                    <div class="internal-1">1</div>
+                    <div class="internal-2">2</div>
+                    <div class="internal-3">3</div>
+                    <div class="internal-4">4</div>
+                    <div class="internal-5">5</div>
+                    <div class="internal-6">6</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Sombras" data-href="/Slides/5-Graficos/sombras.html" onclick="NavigateTo.call(this);">
+                <span>Sombras</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Transiciones" data-href="/Slides/5-Graficos/transition.html" onclick="NavigateTo.call(this);">
+                <span>Transiciones</span>
+            </button>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,42 @@
+﻿<article class="slide" data-title="Mobile First vs Desktop First" data-href="/Slides/6-Responsive/media_queries.html">
+    <header>
+        <h2>Mobile First vs Desktop First</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Diseño responsive</li>
+            <li>Mobile First vs Desktop First</li>
+        </ul>
+    </header>
+
+    <div class="module">
+        <div class="module-content">
+            <div class="desc">
+                <p>No hay que diseñar un estilo por cada resolucion o dispositivo, se debe empezar con un estilo y a partir de ahí irlo adaptando por medio de media queries</p>
+                <ul>
+                    <li>
+                        <p><strong>Desktop first:</strong> Se diseña el sitio con la visualización para escritorio por defecto. Despues se añaden las media queries para adaptarlo a tables primero y a moviles después. Las modificaciones consistirán en ir eliminando columnas, haciendo el texto más pequeño, etc.</p>
+                    </li>
+                    <li>
+                        <p><strong>Mobile First:</strong> Se diseña primero para  movil y despues se añaden media queries que van refinando el diseño para tablet primero y despues para escritorio. Se irán añadiendo columnas y ajustando el contenido al nuevo tamaño disponible.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Introducción a RWD" data-href="/Slides/6-Responsive/rwd.html" onclick="NavigateTo.call(this);">
+                <span>Introducción a RWD</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Media Queries" data-href="/Slides/6-Responsive/media_queries.html" onclick="NavigateTo.call(this);">
+                <span>Media Queries</span>
+            </button>
+        </div>
+    </div>
+</article>

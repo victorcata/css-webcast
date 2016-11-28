@@ -1,0 +1,413 @@
+﻿<article class="slide" data-title="Caja Flexible" data-href="/Slides/3-Layout/grid.html">
+    <header>
+        <h2>Caja flexible</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Layout</li>
+            <li>Caja flexible</li>
+        </ul>
+    </header>
+    <p>El modelo de caja flexible o flexbox nos permite adaptar nuestros diseños de layout de tal modo que se adapten de una forma predecible segun indiquemos y de una manera flexible a todo tipo de resoluciones.</p>
+
+    <!-- display: flex -->
+    <section class="module">
+        <h3>display: flex</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad nos permite indicar a un contenedor que todos sus hijos deberan comportarse como elementos flexibles. Los elementos hijos suelen ir acompañados de la propiedad flex.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+}
+
+<span class="style">.flex</span> {
+    <span class="prop">flex:</span> 1;
+    <span class="prop">height:</span> 200px;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-layout">
+                    <div class="flex-container">
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- flex -->
+    <section class="module">
+        <h3>flex</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La propiedad flex indica la flexibilidad de ese elemento con respecto al resto de elementos hermanos. Por defecto su valor es <em>flex: 0 1 auto</em>, siendo cada valor lo siguiente:</p>
+                <ul>
+                    <li>El primer valor indica el ancho relativo del elemento con respecto a los demás.</li>
+                    <li>El segundo valor <strong>flex-shrink</strong> indica como de estrecho puede llegar a ser el elemento.</li>
+                    <li>El ultimo valor es el <strong>flex-basis</strong> e indica el ancho inicial para un elemento.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+}
+
+<span class="style">.flex-1</span> {
+    <span class="prop">flex:</span> 1;
+}
+
+<span class="style">.flex-2</span> {
+    <span class="prop">flex:</span> 2;
+}
+
+<span class="style">.flex-3</span> {
+    <span class="prop">flex:</span> 3;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-layout">
+                    <div class="flex-container">
+                        <div class="flex-1">flex-1</div>
+                        <div class="flex-2">flex-2</div>
+                        <div class="flex-3">flex-3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- flex-direction -->
+    <section class="module">
+        <h3>flex-direction</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad indica como debe disponer los elementos, si como filas o como columnas.</p>
+                <ul>
+                    <li><strong>row:</strong> (Valor por defecto) Muestra los elementos uno al lado del otro de izquierda a derecha.</li>
+                    <li><strong>row-reverse:</strong> Uno al lado del otro pero de derecha a izquierda.</li>
+                    <li><strong>column:</strong> Muestra los elementos uno encima de otro.</li>
+                    <li><strong>column-reverse:</strong> Invierte verticalmente el orden de los elementos.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+    <span class="prop">flex-direction:</span> column;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-layout">
+                    <div class="flex-container is-row">
+                        <div class="flex-row"></div>
+                        <div class="flex-row"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- flex-wrap -->
+    <section class="module">
+        <h3>flex-wrap</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Controla si los elementos salta a una nueva fila o columna cuando no caben en el contenedor.</p>
+                <ul>
+                    <li><strong>nowrap:</strong> (Valor por defecto) Los elementos estarán en la misma fila o columna.</li>
+                    <li><strong>wrap:</strong> Los elementos que no caben en el contenedor pasan a una nueva fila o columna.</li>
+                    <li><strong>wrap-reverse:</strong> Igual que <em>wrap</em> pero en orden invertido.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+    <span class="prop">flex-wrap:</span> wrap-reverse;
+}
+
+<span class="style">.flex-200</span> {
+    <span class="prop">flex:</span> 1 0 200px;
+}
+
+<span class="style">.flex-300</span> {
+    <span class="prop">flex:</span> 1 0 300px;
+}
+
+<span class="style">.flex-400</span> {
+    <span class="prop">flex:</span> 1 0 400px;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-layout is-nowrap">
+                    <div class="flex-container">
+                        <div class="flex-200">flex-200</div>
+                        <div class="flex-300">flex-300</div>
+                        <div class="flex-400">flex-400</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- flex-flow -->
+    <section class="module">
+        <h3>flex-flow</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad es un atajo que nos permite indicar las propiedades <em>flex-direction</em> y <em>flex-wrap</em> juntas</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+    <span class="prop">flex-flow:</span> row nowrap;
+}
+
+<span class="style">.flex-200</span> {
+    <span class="prop">flex:</span> 1 0 200px;
+}
+
+<span class="style">.flex-300</span> {
+    <span class="prop">flex:</span> 1 0 300px;
+}
+
+<span class="style">.flex-400</span> {
+    <span class="prop">flex:</span> 1 0 400px;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-layout is-flow">
+                    <div class="flex-container">
+                        <div class="flex-200">flex-200</div>
+                        <div class="flex-300">flex-300</div>
+                        <div class="flex-400">flex-400</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- justify-content -->
+    <section class="module">
+        <h3>justify-content</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Permite indicar como se distribuye el contenido cuando hay espacio sobrante.</p>
+                <ul>
+                    <li><strong>flex-start:</strong> Alinea los elementos a la izquierda de la fila. Si la propiedad <em>flex-direction</em> está puesta como  <em>row-reverse</em> será a la derecha.</li>
+                    <li><strong>flex-end:</strong> Alinea los elementos a la derecha.</li>
+                    <li><strong>center:</strong> Coloca el elemento en el centro del contenedor.</li>
+                    <li><strong>space-between:</strong> Reparte el espacio entre todos los elementos de una forma equitativa.</li>
+                    <li><strong>space-around:</strong> El espacio sobrante es repartido equitativamente a ambos lados.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+    <span class="prop">justify-content:</span> space-around;
+}
+
+<span class="style">.flex</span> {
+    <span class="prop">width:</span> 50px;
+    <span class="prop">height:</span> 100px;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-justify">
+                    <div class="flex-container">
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- align-items -->
+    <section class="module">
+        <h3>align-items</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La propiedad align-items es útil cuando tenemos elementos flexibles de diferentes alturas y queremos controlar donde ubicarlos verticalmente.</p>
+                <ul>
+                    <li><strong>stretch:</strong> (Valor por defecto) Estira los elementos para que ocupen la misma altura.</li>
+                    <li><strong>flex-start:</strong> Alinea los elementos en la parte superior del contenedor.</li>
+                    <li><strong>flex-end:</strong> Alinea los elementos en la parte baja del contenedor.</li>
+                    <li><strong>center:</strong> Coloca los elementos centrados verticalmente.</li>
+                    <li><strong>baseline:</strong> Alinea la línea base del primer elemento con el resto.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+    <span class="prop">align-items:</span> center;
+    <span class="prop">height:</span> 200px;
+}
+
+<span class="style">.flex-100</span> {
+    <span class="prop">flex:</span> 1;
+    <span class="prop">height:</span> 100px;
+}
+
+<span class="style">.flex-50</span> {
+    <span class="prop">flex:</span> 1;
+    <span class="prop">height:</span> 50px;
+}
+
+<span class="style">.flex-150</span> {
+    <span class="prop">flex:</span> 1;
+    <span class="prop">height:</span> 150px;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-align">
+                    <div class="flex-container">
+                        <div class="flex-100"></div>
+                        <div class="flex-50"></div>
+                        <div class="flex-150"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- align-content -->
+    <section class="module">
+        <h3>align-content</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad solo es útil si tenemos la propiedad <em>flex-wrap</em> con el valor wrap asignado, tenemos múltiples filas y además el contenedor es mas alto que todas las filas.</p>
+                <ul>
+                    <li><strong>stretch:</strong> (Valor por defecto) Estira las filas para ocupar la misma altura.</li>
+                    <li><strong>flex-start:</strong> Ubica la fila de los elementos en la parte superior del contenedor.</li>
+                    <li><strong>flex-end:</strong> Ubica la fila en la parte baja del contenedor.</li>
+                    <li><strong>center:</strong> Centra la fila verticalmente.</li>
+                    <li><strong>space-between:</strong> La distribuye con espacio equitativo entre filas.</li>
+                    <li><strong>space-around:</strong> El espacio sobrante es repartido equitativamente a ambos lados.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-container</span> {
+    <span class="prop">display:</span> flex;
+    <span class="prop">justify-wrap:</span> wrap;
+    <span class="prop">height:</span> 300px;
+}
+
+<span class="style">.flex</span> {
+    <span class="prop">flex:</span> 1 0 33%;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-content">
+                    <div class="flex-container">
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                        <div class="flex"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- order -->
+    <section class="module">
+        <h3>order</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Establece el orden en el cual se mostrarán los elementos.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-1, .flex-2, .flex-3, .flex-4, .flex-5</span> {
+    <span class="prop">flex:</span> 1;
+}
+    
+<span class="style">.flex-1</span> {
+    <span class="prop">order:</span> 5;
+}
+ 
+<span class="style">.flex-2</span> {
+    <span class="prop">order:</span> 3;
+}
+
+<span class="style">.flex-3</span> {
+    <span class="prop">order:</span> 1;
+}
+
+<span class="style">.flex-4</span> {
+    <span class="prop">order:</span> 2;
+}
+
+<span class="style">.flex-5</span> {
+    <span class="prop">order:</span> 4;
+}</code></pre>
+                </div>
+                <div class="output is-flex flex-order">
+                    <div class="flex-container">
+                        <div class="flex-1">flex-1</div>
+                        <div class="flex-2">flex-2</div>
+                        <div class="flex-3">flex-3</div>
+                        <div class="flex-4">flex-4</div>
+                        <div class="flex-5">flex-5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- align-self -->
+    <section class="module">
+        <h3>align-self</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad se comporta igual que la propiedad <em>align-items</em> salvo que en este caso aplica solo a un elemento.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.flex-start</span> {
+    <span class="prop">flex:</span> 1;
+    <span class="prop">align-self:</span> flex-start;
+}
+
+<span class="style">.flex-center</span> {
+    <span class="prop">flex:</span> 1;
+    <span class="prop">align-self:</span> center;
+}
+
+<span class="style">.flex-end</span> {
+    <span class="prop">flex:</span> 1;
+    <span class="prop">align-self:</span> flex-end;
+}
+                    </code></pre>
+                </div>
+                <div class="output is-flex flex-self">
+                    <div class="flex-container">
+                        <div class="flex-start">flex-start</div>
+                        <div class="flex-center">flex-center</div>
+                        <div class="flex-end">flex-end</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Float" data-href="/Slides/3-Layout/float.html" onclick="NavigateTo.call(this);">
+                <span>Float</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Creando un Grid" data-href="/Slides/3-Layout/grid.html" onclick="NavigateTo.call(this);">
+                <span>Creando un Grid</span>
+            </button>
+        </div>
+    </div>
+</article>

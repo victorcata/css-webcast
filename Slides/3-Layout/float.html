@@ -1,0 +1,175 @@
+﻿<article class="slide" data-title="Float" data-href="/Slides/3-Layout/flexbox.html">
+    <header>
+        <h2>Elementos flotantes</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Layout</li>
+            <li>Float</li>
+        </ul>
+    </header>
+
+    <!-- float -->
+    <section class="module">
+        <h3>float</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La propiedad float se encarga se colocar un elemento de forma flotante con respecto a los elementos que tiene a su alrededor. La mejor forma de entenderlo es imaginando una revista, en la que las imágenes se colocan al lado del texto, tanto a la izquierda como a la derecha. Los distintos valores que puede tomar esta propiedad son:</p>
+                <ul>
+                    <li><strong>left:</strong> Desplaza los elementos a la izquierda mientras el contenido se desplaza a lo largo del lado derecho.</li>
+                    <li><strong>right:</strong> Desplaza el elemento a la derecha y el contenido se desplaza a lo largo de la izquierda.</li>
+                    <li><strong>none:</strong> Desactiva la propiedad float definida previamente.</li>
+                </ul>
+                <p>Hay que tener en cuenta que las propiedades background y border no se ven afectadas por la propiedad float. Por lo que si un elemento se desplaza al lado de otro elemento float y tiene las propiedades background o border puestas, estas se verán debajo del elemento flotante. Para solucionar este inconviente se le debe aplicar al elemento que contiene el background la propiedad <em>overflow: hidden</em>.</p>
+                <p>También hay que tener en cuenta que un elemento flotante, lo hace con respecto a los elementos que le siguen a continuación y no a los elementos previos.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-left{</span>
+    <span class="prop">float:</span> left;
+    <span class="prop">width:</span> 20%;
+    <span class="prop">height:</span> 75px;
+}
+
+<span class="style">.box-right{</span>
+    <span class="prop">float:</span> right;
+    <span class="prop">width:</span> 40%;
+    <span class="prop">height:</span> 50px;
+}
+</code></pre>
+                </div>
+                <div class="output is-float">
+                    <div class="box-left">Left</div>
+                    <div class="box-right">Right</div>
+                    <div class="box">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- clear -->
+    <section class="module">
+        <h3>clear</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad permite que el elemento a continuación de otro flotante no tenga su propiedad float en cuenta. Los valores que puede tomar esta propiedad son:</p>
+                <ul>
+                    <li><strong>left:</strong> Si hay un elemento flotante con valor left anterior no se desplazará a su derecha.</li>
+                    <li><strong>right:</strong> El mismo comportamiento pero con elementos flotantes con valor right.</li>
+                    <li><strong>both:</strong> El elemento no se desplaza a un lateral aunque haya elementos flotantes previamente definidos.</li>
+                    <li><strong>none:</strong> Desactiva la propiedad clear puesta previamente</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-left</span> {
+    <span class="prop">float:</span> left;
+    <span class="prop">width:</span> 200px;
+    <span class="prop">height:</span> 100px;
+}
+
+<span class="style">.box-right</span> {
+    <span class="prop">float:</span> right;
+    <span class="prop">width:</span> 100px;
+    <span class="prop">height:</span> 50px;
+}                         
+
+<span class="style">.box-clear-right</span> {
+    <span class="prop">clear:</span> right;
+}</code></pre>
+                </div>
+                <div class="output is-float">
+                    <div class="box-left">Left</div>
+                    <div class="box-right">Right</div>
+                    <div class="box-clear-right">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="module">
+        <h3>Construir un layout mediante float</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Para construir un layout mediante float tenemos dos posibilidades: determinar la ubicación que van a ocupar nuestros elementos y aplicar los estilos float y clear según corresponda. O partir de un grid de columnas y filas y aplicar a cada elemento una clase indicando el número de columnas que queremos que ocupe. El primer caso se muestra en el ejemplo siguiente, el segundo en el apartado <em>Creando un Grid</em>.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.header</span> {
+    <span class="prop">height:</span> 50px;
+}    
+                                             
+<span class="style">.menu</span> {
+    <span class="prop">float:</span> left;
+    <span class="prop">width:</span> 20%;
+    <span class="prop">height:</span> 400px;
+    <span class="prop">margin:</span> 5px 5px 5px 0;
+}    
+                                             
+<span class="style">.container</span> {
+    <span class="prop">float:</span> right;
+    <span class="prop">height:</span> 400px;                         
+    <span class="prop">margin-top:</span> 5px;
+    <span class="prop">overflow:</span> hidden;
+}    
+                                             
+<span class="style">.footer</span> {
+    <span class="prop">clear:</span> left;
+    <span class="prop">height:</span> 50px;
+}</code></pre>
+                </div>
+                <div class="output is-float layout">
+                    <div class="header_f">Header</div>
+                    <div class="menu_f">Menu</div>
+                    <div class="container_f">Container</div>
+                    <div class="footer_f">Footer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inconvenientes -->
+    <section class="module">
+        <h3>Problemas de un layout de float</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Cuando un elemento se hace flotante, este sale del flujo del documento colocandose encima del resto de elementos y por consiguiente cualquier elemento que se coloque debajo aparecera oculto. Para solucionar este problema se puede realizar los siguiente:</p>
+                <ul>
+                    <li>Añadir un elemento HTML a continuación asignarle la propiedad clear:both. El problema es que asignamos contenido HTML cuando estamos modificando presentación.</li>
+                    <li>Hacer flotante también el elemento oculto. El problema es que pasamos el problema a los siguientes elementos.</li>
+                    <li>Utilizar la propiedad <em>overflow:hidden</em> la cual expande el contenido del elemento fuera del elemento flotante.</li>
+                    <li>Usar el siguiente estilo en el contenedor de elementos flotantes:</li>
+                </ul>
+            </div>
+<pre><code class="code is-light"><span class="style">.container::after</span> {
+    <span class="prop">content:</span> ' ';
+    <span class="prop">display:</span> table;
+    <span class="prop">clear:</span> both;
+}</code></pre>
+            <br />
+            <div class="desc">
+                <p>Otro problema viene cuando queremos que todos los elementos flotantes tengan la misma altura. En este caso las soluciones pueden consistir en:</p>
+                <ul>
+                    <li>Añadir un background con una imagen que se repite a lo largo del eje vertical, dando la sensación de que todas las columnas tienen la misma altura.</li>
+                    <li>Añadir las columnas dentro de otro elemento y a ese elemento darle un background que ocupe la altura deseada.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Posicionamiento y visibilidad" data-href="/Slides/3-Layout/position.html" onclick="NavigateTo.call(this);">
+                <span>Posicionamiento y visibilidad</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Caja flexible" data-href="/Slides/3-Layout/flexbox.html" onclick="NavigateTo.call(this);">
+                <span>Caja flexible</span>
+            </button>
+        </div>
+    </div>
+</article>

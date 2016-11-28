@@ -1,0 +1,266 @@
+﻿<article class="slide" data-title="Background" data-href="/Slides/5-Graficos/gradientes.html">
+    <header>
+        <h2>Background</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Gráficos y animaciones</li>
+            <li>Background</li>
+        </ul>
+    </header>
+
+    <!-- background-color -->
+    <section class="module">
+        <h3>background-color</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background-color:</span> #0170BA;
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-color">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- background-image -->
+    <section class="module">
+        <h3>background-image</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante esta propiedad establecemos una imagen como fondo del elemento. Hay que tener en cuenta ciertas propiedades que se aplican por defecto y que deben ser indicadas para adaptar la imagen según necesitemos.</p>
+                <p><strong>¿Cuando aplicamos &lt;img&gt; y cuando background-image?</strong>: Si la imagen es simplemente decorativa debemos utilizar <em>background-image</em>. Sin embargo, si la imagen es parte del contenido deberemos utilizar el &lt;img&gt;. Cuando imprimimos una página web, solo las etiquetas &lt;img&gt; aparecerán en la impresión de la página, los <em>background-image</em> serán descartados.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg-image</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-image">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- background-repeat -->
+    <section class="module">
+        <h3>background-repeat</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>
+                    Mediante esta propiedad podemos modificar el número de apariciones de la imagen dentro del espacio disponible y en que forma lo visualizamos. Los valores que puede tomar esta propiedad son:
+                </p>
+                <ul>
+                    <li><strong>repeat:</strong> (Valor por defecto) Por defecto la imagen se repite tantas veces en horizontal o vertical como el espacio disponible se lo permita.</li>
+                    <li><strong>no-repeat:</strong> La imagen no se puede repetir.</li>
+                    <li><strong>repeat-x:</strong> La imagen se repetirá horizontalmente segun el espacio disponible.</li>
+                    <li><strong>repeat-y:</strong> La imagen se repetirá verticalmente segun el espacio disponible.</li>
+                    <li><strong>round:</strong> La imagen se repetirá horizontalmente, mientras que verticalmente se estirará hasta ocupar el espacio disponible.</li>
+                    <li><strong>space:</strong> La imagen se repetirá horizontal o verticalmente tantas veces como el espacio disponible le permita, mostrandose siempre completa.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-repeat:</span> round; 
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-repeat">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- background-size -->
+    <section class="module">
+        <h3>background-size</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante esta propiedad estamos indicando el tamaño de nuestra imagen, siendo el primer valor su ancho y el segundo su alto. Se puede indicar un valor y dejar el otro en <em>auto</em>, de este modo se respeta la relación de aspecto. Sin embargo, permite otros dos valores que podemos asignar:</p>
+                <ul>
+                    <li><strong>contain:</strong> Fuerza a la imagen a ajustarse al espacio disponible mientras mantiene la relacion de aspecto.</li>
+                    <li><strong>cover:</strong> Fuerza a ocupar todo el espacio disponible sin respetar la relacion de aspecto.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-size:</span> 50px 100px;
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-size">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- background-position -->
+    <section class="module">
+        <h3>background-position</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos indicar en que coordenadas x e y empezara nuestra imagen. Podemos indicar ambos ejes o de forma independiente mediante las propiedades <strong>background-position-x</strong> y <strong>background-position-y</strong>. A parte, esta propiedad incluye los siguientes valores:</p>
+                <ul>
+                    <li>Horizontal: left | center | right</li>
+                    <li>Vertical: top | center | bottom </li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-position:</span> 30px 20px;
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-position">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- background-attachment -->
+    <section class="module">
+        <h3>background-attachment</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Esta propiedad nos permite dejar la imagen fija mientras hacemos scroll.</p>
+                <ul>
+                    <li><strong>scroll</strong>: (Valor por defecto) Al hacer scroll la imagen se desplaza con el resto del contenido.</li>
+                    <li><strong>fixed</strong>: Mantiene la imagen fija en la posición de la pantalla indicada.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-attachment:</span> fixed; 
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-attach">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- background-origin -->
+    <section class="module">
+        <h3>background-origin</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Indica donde debe comenzar la imagen en relacion al borde, padding o contenido del elemento. Esta propiedad no afecta si no hay borde y/o padding</p>
+                <ul>
+                    <li><strong>padding-box:</strong> (Valor por defecto) Coloca la imagen con respecto al padding.</li>
+                    <li><strong>content-box:</strong> Coloca la imagen con respecto al contenido.</li>
+                    <li><strong>border-box:</strong> Coloca la imagen en la esquina superior izquierda asignada al borde.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg-content-origin</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-origin:</span> content-box;
+}
+
+<span class="style">.bg-padding-origin</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-origin:</span> padding-box;
+}
+
+<span class="style">.bg-border-origin</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-origin:</span> border-box;
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-origin">
+                    <div class="bg-content-origin"><span>content-box</span></div>
+                    <div class="bg-padding-origin"><span>padding-box</span></div>
+                    <div class="bg-border-origin"><span>border-box</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- background-clip -->
+    <section class="module">
+        <h3>background-clip</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Limita el área donde la imagen puede aparecer.</p>
+                <ul>
+                    <li><strong>border-box:</strong> (Valor por defecto) Permite a la imagen aparecer bajo el contenido debajo de los bordes. Solo visible si los bordes no son sólidos.</li>
+                    <li><strong>padding-box:</strong> Muestra la imagen dentro del padding y el contenido, pero no debajo de los bordes.</li>
+                    <li><strong>content-box:</strong> La imagen se muestra solo debajo del contenido.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg-content-clip</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-clip:</span> content-box;
+}
+
+<span class="style">.bg-padding-clip</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-clip:</span> padding-box;
+}
+
+<span class="style">.bg-border-clip</span> {
+    <span class="prop">background-image:</span> url(../assets/image.png);
+    <span class="prop">background-clip:</span> border-box;
+}</code></pre>
+                </div>
+                <div class="output bg-defaults bg-clip">
+                    <div class="bg-content-clip"><span>content-box</span></div>
+                    <div class="bg-padding-clip"><span>padding-box</span></div>
+                    <div class="bg-border-clip"><span>border-box</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="module">
+        <h3>Shorthand</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>La propiedad background es un shorthand que nos permite definir a la vez distintas propiedades del background. Si se indican las propiedades <em>background-position</em> y <em>background-size</em> se deben separar con /.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.bg</span> {
+    <span class="prop">background:</span> url(../assets/image.png) left top/20px 30px repeat scroll padding-box; 
+}</code>
+</pre>
+                </div>
+                <div class="output bg-defaults bg-shorthand">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Listas" data-href="/Slides/4-Texto/listas.html" onclick="NavigateTo.call(this);">
+                <span>Listas</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Gradientes" data-href="/Slides/5-Graficos/gradientes.html" onclick="NavigateTo.call(this);">
+                <span>Gradientes</span>
+            </button>
+        </div>
+    </div>
+</article>

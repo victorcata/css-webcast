@@ -1,0 +1,78 @@
+﻿@media (max-width: 1200px) {
+    .menu > li {
+        width: 30%;
+    }
+
+    // Menu Hamburguesa
+    #l-menu.is-collapsed {
+        margin-left: -235px;
+
+        &:hover {
+            margin-left: 0;
+        }
+    }
+
+    .h-menu {
+        display: block;
+        left: 0;
+    }
+
+    #biblio {
+        .books-container {
+            width: 90vw;
+        }
+    }
+
+    .menu > li .menu-title {
+        font-size: 1.5em;
+    }
+
+    #presentation #logo-css {
+        right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #presentation {
+        display: none;
+    }
+
+    #logo-css {
+        display: none;
+    }
+
+    .code-container {
+        display: block;
+    }
+
+    #l-menu:not(.is-collapsed) {
+        position: absolute;
+        padding-left: 0;
+
+        .menu {
+            max-width: 100%;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        li {
+            width: 100%;
+        }
+    }
+
+    #l-container {
+        min-width: 320px;
+
+        .slide > header {
+            display: block;
+
+            .breadcrumb {
+                text-align: left;
+                padding-left: 0;
+                white-space: nowrap;
+            }
+        }
+    }
+}

@@ -1,0 +1,523 @@
+﻿<article id="selectores" class="slide" data-title="Seleccionando contenido" data-href="/Slides/1-CSS/shorthands.html">
+    <header>
+        <h2>Seleccionando contenido</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Entendiendo CSS</li>
+            <li>Seleccionando contenido</li>
+        </ul>
+    </header>
+
+    <!-- Tag -->
+    <section class="module">
+        <h3>Etiqueta HTML</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos asignar un estilo a todas las etiquetas de un determinado tipo.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">h1, h2, h3, h4, h5, h6</span> {
+    <span class="prop">font-family:</span> 'Oswald', sans-serif;
+}</code></pre>
+                </div>
+                <div class="output">
+                    <h1>H1 con la fuente 'Oswald'</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clases -->
+    <section class="module">
+        <h3>Clases</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Cuando declaramos un estilo mediante el nombre de una clase debemos tener en cuenta lo siguiente:</p>
+                <ul>
+                    <li>La declaración deben comenzar con un punto.</li>
+                    <li>Solo se permiten letras, números, guiones o el guion bajo.</li>
+                    <li>Debe comenzar por una letra despues del punto.</li>
+                    <li>CSS distingue entre mayúsculas y minúsculas.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-red</span> {
+    <span class="prop">box-shadow:</span> 0 0 5px #000;
+    <span class="prop">background-color:</span> #C0392B;
+}
+</code></pre>
+                </div>
+                <div class="output is-selectores">
+                    <div class="box-red">.box-red</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identificadores -->
+    <section class="module">
+        <h3>Identificadores</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Los estilos asignados mediante identificadores deben comenzar mediante el simbolo #. Ventajas y desventajas de utilizar identificadores para declarar estilos:</p>
+                <p>Ventajas:</p>
+                <ul>
+                    <li>Nos facilita la seleccion del elemento mediante JavaScript.</li>
+                    <li>Nos permite navegar directamente a ese identificador por medio de un link &lt;a&gt;.</li>
+                </ul>
+                <p>Desventajas:</p>
+                <ul>
+                    <li>Asigna al estilo una prioridad alta, lo que dificulta que se apliquen otros estilos definidos mediante otros selectores.</li>
+                    <li>No permite su reutilización, es decir, un identificador es único y solo se aplican los estilos a él mismo.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">#circle-blue</span> {
+    <span class="prop">border-radius:</span> 50%;
+    <span class="prop">background-color:</span> #0170BA;
+}</code></pre>
+                </div>
+                <div class="output is-selectores">
+                    <div id="circle-blue">#circle-blue</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selector universal -->
+    <section class="module">
+        <h3>Selector universal *</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>El selector universal nos permite aplicar un estilo determinado a todos los elementos HTML.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">*</span> {
+    <span class="prop">display:</span> inline-block;
+    <span class="prop">width:</span> 100px;
+    <span class="prop">height:</span> 100px;
+    <span class="prop">line-height:</span> 100px;                         
+    <span class="prop">margin:</span> 10px;              
+    <span class="prop">text-align:</span> center;                             
+    <span class="prop">color:</span> #FFF;
+    <span class="prop">background-color:</span> #0170BA;
+}</code></pre>
+                </div>
+                <div class="output is-selectores is-universal">
+                    <section>&lt;section/&gt;</section>
+                    <p>&lt;p/&gt;</p>
+                    <span>&lt;span/&gt;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Descendientes -->
+    <section class="module">
+        <h3>Descendientes</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>
+                    Podemos definir una clase a partir de su posición dentro de la jerarquia del DOM. Hay que tener en cuenta que la prioridad de ese elemento será la suma de todos las etiquetas indicadas en el estilo.
+                </p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.headline h1</span> {
+    <span class="prop">font-size:</span> 1.5rem;
+    <span class="prop">font-weight: </span>bold;
+    <span class="prop">font-family: </span>monospace;
+}</code></pre>
+                </div>
+                <div class="output is-selectores">
+                    <hgroup class="headline">
+                        <h1>H1 dentro de un hgroup.headline</h1>
+                    </hgroup>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atributos -->
+    <section class="module">
+        <h3>Atributos</h3>
+        <div class="module-content">
+            <p>Podemos seleccionar un elemento a partir de sus atributos:</p>
+            <ul>
+                <li><strong>[atributo]:</strong> Seleccionamos aquellas etiquetas que tienen declarado un determinado atributo.</li>
+                <li><strong>[atributo = valor]:</strong> Selecciona aquellas etiquetas cuyo atributo tienen un determinado valor.</li>
+                <li><strong>[atributo ^= subcadena]:</strong> Aquellos atributos cuyo valor empieza por una determinada subcadena.</li>
+                <li><strong>[atributo $= subcadena]:</strong> Aquellos atributos cuyo valor termina por una determinada subcadena.</li>
+                <li><strong>[atributo *= subcadena]:</strong> Aquellos atributos que contienen una determinada subcadena.</li>
+            </ul>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">a[href]</span> {
+    <span class="prop">text-decoration: </span>underline;
+}
+
+<span class="style">a[href="http://www.google.com"]</span> {
+    <span class="prop">color: </span>#C0392B;
+}
+
+<span class="style">a[href^="https://"]</span> {
+    <span class="prop">text-transform: </span>uppercase;
+}
+
+<span class="style">a[href$=".es"]</span> {
+    <span class="prop">color: </span>#000;
+}
+
+<span class="style">a[href*="avanade"]</span>
+    <span class="prop">text-decoration: </span>none;
+}</code></pre>
+                </div>
+                <div class="output is-selectores">
+                    <ul class="atributes">
+                        <li><a href="http://www.google.com" target="_blank">http://www.google.com</a></li>
+                        <li><a href="https://www.google.com" target="_blank">https://www.google.com</a></li>
+                        <li><a href="http://www.google.es" target="_blank">http://www.google.es</a></li>
+                        <li><a href="http://www.avanade.com" target="_blank">http://www.avanade.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siblings -->
+    <section class="module">
+        <h3>Seleccionando hermanos</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos aplicar un estilo a un elemento en función de sus nodos hermanos. Los estilos se aplican en función de los hermanos definidos previamente, no se puede aplicar en función de los hermanos que le preceden..</p>
+                <ul>
+                    <li><strong>h1 + h2:</strong> Aplica el estilo al elemento h2 que está declarada justo a continuación de un elemento h1.</li>
+                    <li><strong>h1 ~ p:</strong> Aplica el estilo a todas las etiquetas p que están definidas despues de una etiqueta h1 pero no es necesario que hayan sido declaradas justo a continuación.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">h1 + h2</span> {
+    <span class="prop">padding-left:</span> 2rem;
+    <span class="prop">font-size:</span> 2em;
+    <span class="prop">font-style:</span> italic;
+}
+
+<span class="style">h1 ~ p</span> {
+    <span class="prop">padding:</span> 1em 0;
+    <span class="prop">color:</span> #0170BA;
+}
+</code></pre>
+                </div>
+                <div class="output is-selectores siblings">
+                    <h1>Headline 1</h1>
+                    <h2>Headline 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pseudo-clases y Pseudo-elementos -->
+    <section class="module">
+        <h3>Pseudo-clases y Pseudo-elementos</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Pseudo-clases vs Pseudo-elementos:</p>
+                <ul>
+                    <li>Las <strong>Pseudo-clases</strong> se utilizan para definir estados especiales de un elemento, se declaran mediante dos puntos <b>:</b></li>
+                    <li>Los <strong>Pseudo-elementos</strong> nos permite seleccionar partes especificas de un determinado elemento, se declaran mediante <b>::</b></li>
+                </ul>
+                <p>CSS3 añade un simbolo <b>:</b> adicional para distinguir pseudo-clases de pseudo-elementos, sin embargo, Internet Explorer 8 no distingue esta diferencia y todos los navegadores dan soporte aunque los pseudo-elementos aunque se especifiquen con un solo <b>:</b></p>
+            </div>
+
+            <!-- Links -->
+            <div class="submodule">
+                <h4>Pseudo-clases aplicadas a Links</h4>
+                <div class="submodule-content">
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">a:link</span>{
+    <span class="prop">font-size:</span> 2em;
+    <span class="prop">color:</span> #00F;
+}
+
+<span class="style">a:hover</span> {
+    <span class="prop">text-decoration:</span> underline;
+}
+
+<span class="style">a:active</span> {
+    <span class="prop">color:</span> #FFF;
+    <span class="prop">text-shadow:</span> 0 0 4px #000;
+}</code></pre>
+                        </div>
+                        <div class="output is-selectores link-pseudo">
+                            <a href="#" target="_blank" title="Link a la pagina actual">Pseudo-Clases en links</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- focus -->
+            <div class="submodule">
+                <h4>:focus</h4>
+                <div class="submodule-content">
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">:focus</span> {
+    <span class="prop">border:</span> 2px solid #333;
+    <span class="prop">box-shadow:</span>3px 3px 10px #000;
+    <span class="prop">outline:</span>none;
+}</code></pre>
+                        </div>
+                        <div class="output is-selectores focus">
+                            <input type="text" placeholder="Campo de texto con foco estilizado" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- target -->
+            <div class="submodule">
+                <h4>:target</h4>
+                <div class="submodule-content">
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">#target:target</span> {
+    <span class="prop">color:</span> #0170BA;
+    <span class="prop">background-color:</span> #FFF;
+    <span class="prop">border:</span> 1px solid #333;
+}</code></pre>
+                        </div>
+                        <div class="output is-selectores target">
+                            <a href="#target">Link que apunta a #target</a>
+                            <div id="target">
+                                #target
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- not -->
+            <div class="submodule">
+                <h4>:not</h4>
+                <div class="submodule-content">
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">div.gray</span> {
+    <span class="prop">background-color:</span> #AAA;
+}
+
+<span class="style">div:not(.gray)</span> {
+    <span class="prop">background-color:</span> #0170BA;
+}</code></pre>
+                        </div>
+                        <div class="output is-selectores not">
+                            <div class="gray">div.gray</div>
+                            <div class="gray">div.gray</div>
+                            <div>div</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- :child -->
+            <div class="submodule">
+                <h4>:first-child, :last-child, :only-child y :nth-child</h4>
+                <div class="submodule-content">
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">li:first-child</span> {
+    <span class="prop">border-color:</span> #F00;
+}
+
+<span class="style">li:last-child</span> {
+    <span class="prop">border-color:</span> #00F;
+}
+
+<span class="style">li:only-child</span> {
+    <span class="prop">border-color:</span> transparent;         
+    <span class="prop">background-color:</span> #EEE;
+}   
+          
+<span class="style">li:nth-child(3)</span> {
+    <span class="prop">background-color:</span> rgba(0, 0, 255, .1);
+}
+
+<span class="style">li:nth-child(even)</span> {
+    <span class="prop">text-align:</span> center;
+}
+
+<span class="style">li:nth-child(odd)</span> {
+    <span class="prop">text-align:</span> right;
+}
+</code></pre>
+                        </div>
+                        <div class="output is-selectores child">
+                            <div>
+                                <span>Lista con 5 hijos</span>
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                    <li>Item 4</li>
+                                    <li>Item 5</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span>Lista con un solo hijo</span>
+                                <ul>
+                                    <li>Item 1</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- :of-type -->
+            <div class="submodule">
+                <h4>:first-of-type, :last-of-type y :nth-of-type</h4>
+                <div class="submodule-content">
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">span:first-of-type</span> {
+    <span class="prop">background-color:</span> red;
+    <span class="prop">border-color:</span> red;
+    <span class="prop">color:</span> white;
+}
+
+<span class="style">div:last-of-type</span> {         
+    <span class="prop">background-color:</span> blue;
+    <span class="prop">border-color:</span> blue;
+    <span class="prop">color:</span> white;
+}
+
+<span class="style">span:nth-of-type(2)</span> {
+    <span class="prop">border:</span> 2px solid red;         
+    <span class="prop">font-weight:</span> bold;
+    <span class="prop">color:</span> red;
+}         
+
+<span class="style">span:nth-of-type(even)</span> {
+    <span class="prop">border:</span> 2px solid blue;         
+    <span class="prop">font-weight:</span> bold;
+    <span class="prop">color:</span> blue;
+}</code></pre>
+                        </div>
+                        <div class="output is-selectores of-type">
+                            <div>div</div>
+                            <span>span</span>
+                            <div>div</div>
+                            <span>span</span>
+                            <div>div</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parrafos -->
+            <div class="submodule">
+                <h4>Pseudo-elementos aplicados a párrafos</h4>
+                <div class="submodule-content">
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">p::first-letter</span> {
+    <span class="prop">font-size:</span>5em;
+    <span class="prop">font-weight:</span>800;
+    <span class="prop">color:</span>#0170BA;
+}
+
+<span class="style">p::first-line</span> {
+    <span class="prop">color:</span>#C0392B;
+}
+</code></pre>
+                        </div>
+                        <div class="output is-selectores pseudoelements">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ::before y ::after -->
+            <div class="submodule">
+                <h4>::before y ::after</h4>
+                <div class="submodule-content">
+                    <div class="desc">
+                        <p>Los pseudo-elementos ::before y ::after solo se pueden aplicar a etiquetas que permiten añadir contenido (div, span, p, etc.). No se permite a otro tipo de etiquetas tales como input. A estos pseudo-elementos les acompaña la propiedad content que determina el contenido que se va a mostrar y que siempre debe estar definida.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">p::before</span>{
+    <span class="prop">content:</span>'Antes';                         
+    <span class="prop">display:</span>block;
+    <span class="prop">position:</span>relative;
+    <span class="prop">left:</span>-100%;
+    <span class="prop">background-color:</span>#0170BA;
+    <span class="prop">color:</span>#FFF;
+}
+
+<span class="style">p::after</span>{
+    <span class="prop">content:</span>'Despues';                         
+    <span class="prop">display:</span>block;
+    <span class="prop">position:</span>relative;
+    <span class="prop">right:</span>-100%;
+    <span class="prop">background-color:</span>#C0392B;
+    <span class="prop">color:</span>#FFF;
+}
+</code></pre>
+                        </div>
+                        <div class="output is-selectores beforeafter">
+                            <p><span>Elemento</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ::selection -->
+            <div class="submodule">
+                <h4>::selection</h4>
+                <div class="submodule-content">
+                    <div class="desc">
+                        <p>Con este pseudo-elemento solo se pueden aplicar las propiedades background-color y color.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="code">
+<pre><code><span class="style">p::selection</span> {                                     
+    <span class="prop">color:</span>#FFF;
+    <span class="prop">background-color:</span>#C0392B;
+}
+</code></pre>
+                        </div>
+                        <div class="output is-selectores selection">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Conceptos básicos" data-href="/Slides/1-CSS/conceptos.html" onclick="NavigateTo.call(this);">
+                <span>Conceptos básicos</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Estilos por defecto y reset" data-href="/Slides/1-CSS/reset.html" onclick="NavigateTo.call(this);">
+                <span>Estilos por defecto y reset</span>
+            </button>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,116 @@
+﻿@import "helpers/_variables.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: $font_layout, sans-serif;
+    background-image: radial-gradient(closest-corner circle at 30% 30%, $white_light, $gray_light);
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font_headers, sans-serif;
+}
+
+ul, ol {
+    list-style-position: outside;
+    padding: .5em 0 .5em 1.5em;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    line-height: 1.5;
+}
+
+input {
+    padding: .3em 1em;
+}
+
+table {
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid $gray_medium;
+    color: $gray_dark;
+    background-color: $white;
+
+    thead {
+        font-weight: bold;
+        background-color: #EBEBEB;
+
+        th {
+            padding: .5em 1em;
+        }
+    }
+
+    td {
+        border: 1px solid $gray_medium;
+        padding: .3em 1em;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F8F8F8;
+    }
+
+    tbody {
+        tr td:last-child {
+            font-size: 1.2em;
+        }
+    }
+
+    tfoot {
+        text-align: left;
+    }
+}
+
+a {
+    text-decoration: underline;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+button {
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    border-left: 1px solid $gray_medium;
+    background-color: $gray_light;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 110, 183, .5);
+
+    &:hover {
+        background-color: rgba(0, 110, 183, 1);
+    }
+}

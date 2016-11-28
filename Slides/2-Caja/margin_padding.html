@@ -1,0 +1,193 @@
+﻿<section class="slide" data-title="Margin y Padding" data-href="/Slides/2-Caja/display.html">
+    <header>
+        <h2>Margin y padding</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Modelo de caja</li>
+            <li>Margin y padding</li>
+        </ul>
+    </header>
+
+    <!-- Margenes -->
+    <section class="module">
+        <h3>margin-top, margin-right, margin-bottom y margin-left</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Hay que tener en cuenta que cuando se aplica un valor en porcentajes tanto a lo ancho como a lo alto, este porcentaje es calculado en función de la anchura de la página.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code class="code"><span class="style">.box-px</span> {
+    <span class="prop">margin-top:</span> 20px;
+    <span class="prop">margin-left:</span> 40px;
+}
+
+<span class="style">.box-em</span> {
+    <span class="prop">margin-top:</span> 2em;
+    <span class="prop">margin-left:</span> 1.5em;
+}
+
+<span class="style">.box-percentage</span> {
+    <span class="prop">margin-left:</span> 20%;
+}
+    </code></pre>
+                </div>
+                    <div class="output is-marginpadding is-margin">
+                        <div class="box-parent">
+                            <div class="box-px">.box-px</div>
+                        </div>
+                        <div class="box-parent">
+                            <div class="box-em">.box-em</div>
+                        </div>
+                        <div class="box-parent">
+                            <div class="box-percentage">.box-percentage</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Shorthands -->
+    <section class="module">
+        <h3>margin</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante este atajo podemos aplicar un margen a cada lado de una sola vez.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code class="code"><span class="style">.box-1</span> {
+    <span class="prop">margin:</span> 5px 10px 20px 15px;
+}
+
+<span class="style">.box-2</span> {
+    <span class="prop">margin:</span> 10px 30px 10px;
+}
+
+<span class="style">.box-3</span> {
+    <span class="prop">margin:</span> 20px 10px;
+}
+                    </code></pre>
+                </div>
+                <div class="output is-marginpadding is-margin">
+                    <div class="box-parent">
+                        <div class="box-1">.box-1</div>
+                    </div>
+                    <div class="box-parent">
+                        <div class="box-2">.box-2</div>
+                    </div>
+                    <div class="box-parent">
+                        <div class="box-3">.box-3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colapsando margenes -->
+    <section class="module">
+        <h3>Colapso de margenes</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>El colapso de margenes se producen cuando dos elementos situados verticalmente uno encima del otro, cada uno aplica un margen vertical. En este caso, la separación vertical entre ambos elementos será el valor del margen máximo y no la suma de ambos márgenes.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-top</span> {
+    <span class="prop">margin-bottom:</span> 30px;
+}
+
+<span class="style">.box-bottom</span> {
+    <span class="prop">margin-top:</span> 10px;
+}
+            </code></pre>
+                </div>
+                <div class="output is-marginpadding is-colliding">
+                    <div class="box-top">.box-top</div>
+                    <div class="box-bottom">.box-bottom</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Padding -->
+    <section class="module">
+        <h3>padding-top, padding-right, padding-bottom y padding-left</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Al igual que con los márgenes, cuando se aplica un valor en porcentajes tanto a lo ancho como a lo alto, este porcentaje es calculado en función de la anchura de la página.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-px</span> {
+    <span class="prop">padding-top:</span> 20px;
+    <span class="prop">padding-left:</span> 40px;
+}
+
+<span class="style">.box-em</span> {
+    <span class="prop">padding-bottom:</span> 2em;
+    <span class="prop">padding-right:</span> 1.5em;
+}
+
+<span class="style">.box-percentage</span> {
+    <span class="prop">padding-left:</span> 20%;
+}
+    </code></pre>
+                </div>
+                <div class="output is-marginpadding is-padding">
+                    <div class="box-px clip">.box-px</div>
+                    <div class="box-em clip">.box-em</div>
+                    <div class="box-percentage clip">.box-percentage</div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Shorthands -->
+    <section class="module">
+        <h3>padding</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Atajo para establecer todos los padding con una sola llamada.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.box-1</span> {
+    <span class="prop">margin:</span> 5px 10px 20px 15px;
+}
+
+<span class="style">.box-2</span> {
+    <span class="prop">margin:</span> 10px 30px 10px;
+}
+
+<span class="style">.box-3</span> {
+    <span class="prop">margin:</span> 20px 10px;
+}
+                    </code></pre>
+                </div>
+                <div class="output is-marginpadding is-padding">
+                    <div class="box-1 clip">.box-1</div>
+                    <div class="box-2 clip">.box-2</div>
+                    <div class="box-3 clip">.box-3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Modelo de caja" data-href="/Slides/2-Caja/boxmodel.html" onclick="NavigateTo.call(this);">
+                <span>Modelo de caja</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Display" data-href="/Slides/2-Caja/display.html" onclick="NavigateTo.call(this);">
+                <span>Display</span>
+            </button>
+        </div>
+    </div>
+</section>

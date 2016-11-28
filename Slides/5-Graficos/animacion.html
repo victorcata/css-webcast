@@ -1,0 +1,274 @@
+﻿<article class="slide" data-title="Animaciones" data-href="/Slides/6-Responsive/rwd.html">
+    <header>
+        <h2>Animaciones</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Gráficos y animaciones</li>
+            <li>Animaciones</li>
+        </ul>
+    </header>
+
+    <section class="module">
+        <div class="desc">
+            <p>Para definir una animación primero debemos definirla mediante la etiqueta <em>@keyframes</em> y despues asignarsela al elemento deseado.</p>
+        </div>
+    </section>
+
+    <!-- Rendimiento -->
+    <section class="module">
+        <h3>Mejorar el rendimiento de las animaciones y transiciones.</h3>
+        <div class="module-content">
+            <p>Para mejorar el rendimiento de animaciones complejas debemos tener en cuenta que las animaciones en 2D son calculadas y ejecutadas desde la CPU, mientras que las animaciones 3D son ejecutadas desde la GPU. Por ello, a veces es mejor llevarnos la animación al espacio tridimensional para mejorar su rendimiento. Por ejemplo, añadiendo la propiedad <em>transform: translateZ(0);</em></p>
+        </div>
+    </section>
+
+    <!-- @keyframes -->
+    <section class="module">
+        <h3>@keyframes</h3>
+        <div class="module-content">
+            <div class="code-container is-columns">
+<pre><code class="code"><span class="tag">@keyframes name</span> {
+    <span class="style">from</span> {
+        <span class="prop">opacity:</span> 0;
+    }
+
+    <span class="style">to</span> {
+        <span class="prop">opacity:</span> 1;
+    }
+}</code></pre>
+
+<pre><code class="code"><span class="tag">@keyframes name</span> {
+    <span class="style">from</span> {
+        <span class="prop">opacity:</span> 0;
+    }
+         
+    <span class="style">25%</span> {
+        <span class="prop">opacity:</span> 1;
+    }
+
+    <span class="style">75%</span> {
+        <span class="prop">opacity:</span> .5;
+    }
+    
+    <span class="style">to</span> {
+        <span class="prop">opacity:</span> 1;
+    }
+}</code></pre>
+<pre><code class="code"><span class="tag">@keyframes name</span> {
+    <span class="style">from</span> {
+        <span class="prop">opacity:</span> 0;
+    }
+
+    <span class="style">25%, 50%</span> {
+        <span class="prop">opacity:</span> .5;
+    }
+
+    <span class="style">to</span> {
+        <span class="prop">opacity:</span> 1;
+    }
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- animation-name y animation-duration -->
+    <section class="module">
+        <h3>animation-name y animation-duration</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime-name</span> {
+    <span class="prop">animation-name:</span> rotateAnimation;
+    <span class="prop">animation-duration:</span> 10s;
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime-name"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- animation-timing -->
+    <section class="module">
+        <h3>animation-timing</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime</span> {
+    <span class="prop">animation-name:</span> changeOpacity;
+    <span class="prop">animation-duration:</span>  1s;
+    <span class="prop">animation-timing-function:</span>  ease-in-out;
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime-timing"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- animation-delay -->
+    <section class="module">
+        <h3>animation-delay</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime-timing</span> {
+    <span class="prop">animation-name:</span> changeOpacity;
+    <span class="prop">animation-duration:</span>  1s;
+    <span class="prop">animation-timing-function:</span>  ease-in-out;
+    <span class="prop">animation-delay:</span>  5s;
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime-delay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- animation-iteration-count -->
+    <section class="module">
+        <h3>animation-iteration-count</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos indicar el número de veces que queremos que la animación se repita, pero también podemos decir que la animación se repita siembre mediante la palabra <em>infinite</em>.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime-iteration</span> {
+    <span class="prop">animation-name:</span> rotateAnimation;
+    <span class="prop">animation-duration:</span> 5s;
+    <span class="prop">animation-iteration-count:</span> infinite;
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime-iteration"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- animation-direction -->
+    <section class="module">
+        <h3>animation-direction</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante esta propiedad podemos indicar en que dirección queremos que la animación se ejecute. Si desde el fotograma inicial hasta el final o a la inversa. Los valores que puede tomar son:</p>
+                <ul>
+                    <li><strong>normal:</strong> Se ejecuta desde el principio hasta el final.</li>
+                    <li><strong>reverse:</strong> Se ejecuta desde el fotograma final hasta el inicial, es decir, marcha atrás.</li>
+                    <li><strong>alternate:</strong> Va alternando cada vez que se ejecuta una iteración, primero hacia adelante y despues hacia atrás.</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime-direction</span> {
+    <span class="prop">animation-name:</span> rotateAnimation;
+    <span class="prop">animation-duration:</span> 5s;
+    <span class="prop">animation-iteration-count:</span> infinite;
+    <span class="prop">animation-direction:</span> reverse;
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime-direction"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- animation-fill-mode -->
+    <section class="module">
+        <h3>animation-fill-mode</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime-mode</span> {
+    <span class="prop">animation-name:</span> changeBgColor;
+    <span class="prop">animation-duration:</span> 4s;
+    <span class="prop">animation-iteration-count:</span> 3;
+    <span class="prop">animation-fill-mode:</span> fordwards; 
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime-mode"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- animation-play-state -->
+    <section class="module">
+        <h3>animation-play-state</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime-pause</span> {
+    <span class="prop">animation-name:</span> rotateAnimation;
+    <span class="prop">animation-duration:</span> 5s;
+    <span class="prop">animation-iteration-count:</span> infinite;
+    <span class="prop">animation-direction:</span> alternate;
+}
+
+<span class="style">.anime-pause:hover</span> {
+    <span class="prop">animation-play-state:</span> paused;
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime-pause"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shorthand -->
+    <section class="module">
+        <h3>Shorthand</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Podemos establecer todas las propiedades a la vez mientras las indiquemos en el siguiente orden: <em>animation-name, animation-duration, animation-timing-function, animation-delay animation-iteration-coun, animation-direction y animation-fill-mode</em>.</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">.anime</span> {
+    <span class="prop">animation:</span> rotateAnimation 2s ease-in-out 5s infinite alternate-reverse forwards;
+}</code></pre>
+                </div>
+                <div class="output animations">
+                    <div class="anime"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejemplos -->
+    <div class="module">
+        <h3>Ejemplos</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Con un poco de paciencia podemos realizar animaciones medianamente complejas como la que se muestra a continuación. En este caso podemos hacer botar una pelota mientras con una animación controlamos su movimiento y forma, con otra animación controlamos el movimiento y solidez de la sombra. A parte, mediante sombras podemos asignar a la pelota un efecto esferico.</p>
+            </div>
+            <div class="animation-sample-1">
+                <div class="ball"></div>
+                <div class="shadow"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Transiciones" data-href="/Slides/5-Graficos/transition.html" onclick="NavigateTo.call(this);">
+                <span>Transiciones</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Introducción a RWD" data-href="/Slides/6-Responsive/rwd.html" onclick="NavigateTo.call(this);">
+                <span>Introducción a RWD</span>
+            </button>
+        </div>
+    </div>
+</article>

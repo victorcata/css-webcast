@@ -1,0 +1,127 @@
+﻿<article class="slide" data-title="Listas" data-href="/Slides/5-Graficos/background.html">
+    <header>
+        <h2>Listas</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Texto</li>
+            <li>Listas</li>
+        </ul>
+    </header>
+
+    <!-- Tipo de listas -->
+    <section class="module">
+        <h3>list-style-type</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">ul</span> {
+    <span class="prop">listy-style-type:</span> square;
+}</code></pre>
+                </div>
+                <div class="output is-lists">
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Posicionamiento -->
+    <section class="module">
+        <h3>list-style-position</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">ul.inside</span>{
+    <span class="prop">list-style-position:</span> inside;
+}
+
+<span class="style">ul.outside</span>{
+    <span class="prop">list-style-position:</span> outside;
+}
+                    </code></pre>
+                </div>
+                <div class="output is-lists is-position">
+                    <ul class="inside">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                    <ul class="outside">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Posicionamiento -->
+    <section class="module">
+        <h3>list-style-image</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">li</span>{
+    <span class="prop">list-style-image:</span>url(../assets/bullet.png);
+}</code></pre>
+                </div>
+                <div class="output is-lists">
+                    <ul class="image">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom bullets -->
+    <section class="module">
+        <h3>Custom bullets</h3>
+        <div class="module-content">
+            <div class="code-container">
+                <div class="code">
+<pre><code><span class="style">ul li </span>{
+    <span class="prop">list-style-type:</span> none;
+    <span class="prop">counter-increment:</span> item;
+}
+
+<span class="style">ul li:before</span> {
+    <span class="prop">content:</span> counter(item) '. ';
+    <span class="prop">font-size:</span> 1.5em;
+    <span class="prop">color:</span> #0170BA;
+}</code></pre>
+                </div>
+                <div class="output is-lists is-custom">
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Propiedades del texto" data-href="/Slides/4-Texto/propiedades.html" onclick="NavigateTo.call(this);">
+                <span>Propiedades del texto</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Background" data-href="/Slides/5-Graficos/background.html" onclick="NavigateTo.call(this);">
+                <span>Background</span>
+            </button>
+        </div>
+    </div>
+</article>

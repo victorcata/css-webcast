@@ -1,0 +1,167 @@
+﻿<article class="slide" data-title="Web Fonts" data-href="/Slides/4-Texto/propiedades.html">
+    <header>
+        <h2>Web Fonts</h2>
+        <ul class="breadcrumb">
+            <li class="home">
+                <a href="/" class="icon-home" title="Página de Inicio"></a>
+            </li>
+            <li>Texto</li>
+            <li>Web Fonts</li>
+        </ul>
+    </header>
+    <section class="module">
+        <h3>Soporte por navegador segun fuente</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Se permite incluir diferentes formatos de fuente, sin embargo cada uno tiene sus pros y contras (normalmente en el tamaño del fichero) y sobretodo en el soporte que ofrece cada navegador con respecto a un determinado formato. Los formatos disponibles son:</p>
+                <ul>
+                    <li><strong>.eot:</strong> Solo funciona en Internet Explorer.</li>
+                    <li><strong>TrueType y OpenType:</strong> Fuentes más comunes e instaladas en la mayoria de ordenadores.</li>
+                    <li><strong>Web Open Font Format:</strong> Formato diseñado especificamente para la web. Se trata de una versión comprimida de TTF y OTF.</li>
+                    <li><strong>SVG:</strong> No es propiamente un formato de fuente sino el formato vectorial de la misma. No se suele utilizar ya que su tamaños es 2 o 3 veces mayor que el resto.</li>
+                </ul>
+                <p>A continuación se muestra el soporte que ofrecen los navegadores según el formato.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formato</th>
+                            <th>Chrome</th>
+                            <th>IE</th>
+                            <th>Firefox</th>
+                            <th>Safari</th>
+                            <th>Opera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TTF/OTF</td>
+                            <td>4.0</td>
+                            <td>9.0</td>
+                            <td>3.5</td>
+                            <td>3.1</td>
+                            <td>10.0</td>
+                        </tr>
+                        <tr>
+                            <td>WOFF</td>
+                            <td>5.0</td>
+                            <td>9.0</td>
+                            <td>3.6</td>
+                            <td>5.1</td>
+                            <td>11.1</td>
+                        </tr>
+                        <tr>
+                            <td>WOFF2</td>
+                            <td>36.0</td>
+                            <td>-</td>
+                            <td>35.0</td>
+                            <td>-</td>
+                            <td>26.0</td>
+                        </tr>
+                        <tr>
+                            <td>SVG</td>
+                            <td>4.0</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>3.2</td>
+                            <td>9.0</td>
+                        </tr>
+                        <tr>
+                            <td>EOT</td>
+                            <td>-</td>
+                            <td>6.0</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- @font-face -->
+    <section class="module">
+        <h3>@font-face</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>Mediante la etiqueta <em>@font-face</em> indicamos que fuentes queremos cargar en nuestra aplicación. Por regla general, conviene disponer de todos los formatos disponibles para que el navegador automaticamente cargue aquel que necesita. No descarga todos, solo coge la primera fuente que encuentra y le funciona correctamente. De este modo, cuando indicamos las fuentes, estas se escriben en el orden que mejor se adapte a nuestra aplicación (normalmente, indicando las fuentes de menor tamaño primero).</p>
+            </div>
+            <div class="code-container">
+                <div class="code">
+                    <pre><code>
+<span class="style">@font-face</span> {
+    <span class="prop">font-family:</span> FontDemo;
+    <span class="prop">src:</span> url('../assets/fonts/FontDemo.eot');
+    <span class="prop">src:</span> url('../assets/fonts/FontDemo.eot?#iefix') format('embedded-opentype'),
+            url('../assets/fonts/FontDemo.woff2') format('woff2'),
+            url('../assets/fonts/FontDemo.woff') format('woff'),
+            url('../assets/fonts/FontDemo.ttf') format('truetype'),
+            url('../assets/fonts/FontDemo.svg') format('svg');
+}
+
+<span class="style">p</span> {
+    <span class="prop">font-family:</span> FontDemo, sans-serif, monospace;
+}</code></pre>
+                </div>
+                <div class="output is-font-face">
+                    <p>Web Fonts</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Negrita e italica -->
+    <section class="module">
+        <h3>Variantes en negrita e italica</h3>
+        <div class="module-content">
+            <div class="desc">
+                <p>En vez de tener que dar un nombre a cada fuente segun el estilo, se añaden con las propiedades <em>font-weight</em> y <em>font-style</em></p>
+            </div>
+            <div class="code-container">
+<pre><code class="code"><span class="style">@font-face</span> {
+    <span class="prop">font-family:</span> FontDemo;
+    <span class="prop">src:</span> url('FontDemo.woff2') format('woff2');
+    <span class="prop">font-weight:</span> normal;
+    <span class="prop">font-style:</span> normal;
+}
+            
+<span class="style">@font-face</span> {
+    <span class="prop">font-family:</span> FontDemo;
+    <span class="prop">src:</span> url('FontDemoItalic.woff2') format('woff2');
+    <span class="prop">font-weight:</span> normal;
+    <span class="prop">font-style:</span> italic;
+}
+                             
+<span class="style">@font-face</span> {
+    <span class="prop">font-family:</span> FontDemo;
+    <span class="prop">src:</span> url('FontDemoBold.woff2') format('woff2');
+    <span class="prop">font-weight:</span> bold;
+    <span class="prop">font-style:</span> normal;
+}
+                                             
+<span class="style">@font-face</span> {
+    <span class="prop">font-family:</span> FontDemo;
+    <span class="prop">src:</span> url('FontDemoBoldItalic.woff2') format('woff2');
+    <span class="prop">font-weight:</span> bold;
+    <span class="prop">font-style:</span> italic;
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Siguiente -->
+    <div class="actions-container">
+        <div class="left">
+            <button id="prev" title="Creando un Grid" data-href="/Slides/3-Layout/grid.html" onclick="NavigateTo.call(this);">
+                <span>Creando un Grid</span>
+            </button>
+        </div>
+        <div class="right">
+            <button id="next" title="Propiedades del texto" data-href="/Slides/4-Texto/propiedades.html" onclick="NavigateTo.call(this);">
+                <span>Propiedades del texto</span>
+            </button>
+        </div>
+    </div>
+</article>
