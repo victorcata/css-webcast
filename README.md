@@ -1,2 +1,2 @@
 # css_training
-CSS Webcast css3dev.azurewebsites.net 
+CSS Webcast http://css3dev.azurewebsites.net 
