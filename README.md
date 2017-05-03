@@ -2,10 +2,10 @@
 
 Workshop content: 
 
-1- Understanding CSS
-  1.1 - Basic concepts
-  1.2 - Selectors
-  1.3 - Default styles and reset
+1. Understanding CSS
+  1.1. Basic concepts
+  1.2. Selectors
+  1.3. Default styles and reset
 
 2 - Box model
   2.1 - Understanding the box model
