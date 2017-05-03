@@ -2,7 +2,7 @@
 
 Workshop content: 
 
-1 - Understanding CSS
+1- Understanding CSS
   1.1 - Basic concepts
   1.2 - Selectors
   1.3 - Default styles and reset
